@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v1.schema.json",
+  "schemaVersion": 1,
+  "name": "CordisX Community Marketplace",
+  "homepage": "https://cordisx.github.io/marketplace/",
+  "plugins": [
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v1.schema.json",
+      "schemaVersion": 1,
+      "id": "slot-showcase",
+      "name": "Slot Showcase",
+      "description": "Demonstrates all five CordisX semantic UI extension points.",
+      "version": "0.1.0",
+      "source": "https://github.com/cordisx/cordisx",
+      "homepage": "https://github.com/cordisx/cordisx",
+      "license": "UNLICENSED",
+      "compatibility": {
+        "cordisx": "^0.1.0"
+      },
+      "authors": [
+        {
+          "name": "CordisX",
+          "url": "https://github.com/cordisx"
+        }
+      ],
+      "keywords": [
+        "demo",
+        "slots"
+      ]
+    }
+  ]
+}

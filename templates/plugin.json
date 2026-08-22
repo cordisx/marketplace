@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v1.schema.json",
+  "schemaVersion": 1,
+  "id": "publisher.plugin-id",
+  "name": "Plugin Name",
+  "description": "A concise description of what the plugin contributes.",
+  "version": "0.1.0",
+  "source": "https://github.com/publisher/plugin-repository",
+  "homepage": "https://github.com/publisher/plugin-repository#readme",
+  "license": "MIT",
+  "compatibility": {
+    "cordisx": "^0.1.0"
+  },
+  "authors": [
+    {
+      "name": "Publisher",
+      "url": "https://github.com/publisher"
+    }
+  ],
+  "keywords": ["productivity"]
+}

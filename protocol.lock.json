@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/cordisx/cordisx-protocol",
+  "commit": "c740d0b9d710512b995f0fb830ebf69c758d0e7b",
+  "schemas": {
+    "plugin": "schemas/marketplace-plugin.v1.schema.json",
+    "feed": "schemas/marketplace-feed.v1.schema.json"
+  }
+}
