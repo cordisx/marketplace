@@ -1,9 +1,18 @@
 {
-  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v1.schema.json",
-  "schemaVersion": 1,
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+  "schemaVersion": 3,
   "id": "slot-showcase",
+  "fallbackLocale": "en",
   "name": "Slot Showcase",
   "description": "Demonstrates all five CordisX semantic UI extension points.",
+  "localizations": {
+    "zh-CN": {
+      "name": "扩展点展示",
+      "description": "展示 CordisX 的五个语义化界面扩展点。",
+      "authors": ["CordisX 团队"],
+      "keywords": ["演示", "扩展点"]
+    }
+  },
   "version": "0.1.0",
   "source": "https://github.com/cordisx/cordisx",
   "homepage": "https://github.com/cordisx/cordisx",

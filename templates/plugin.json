@@ -1,7 +1,8 @@
 {
-  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v1.schema.json",
-  "schemaVersion": 1,
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+  "schemaVersion": 3,
   "id": "publisher.plugin-id",
+  "fallbackLocale": "en",
   "name": "Plugin Name",
   "description": "A concise description of what the plugin contributes.",
   "version": "0.1.0",

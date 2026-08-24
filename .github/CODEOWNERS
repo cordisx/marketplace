@@ -1,0 +1,7 @@
+/trust/ @cordisx/core
+/scripts/catalog.mjs @cordisx/core
+/protocol.lock.json @cordisx/core
+/feed.config.json @cordisx/core
+/marketplace.json @cordisx/core
+/.github/CODEOWNERS @cordisx/core
+/.github/workflows/check.yml @cordisx/core

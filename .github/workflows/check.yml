@@ -4,12 +4,15 @@ on:
   pull_request:
     paths:
       - "plugins/**"
+      - "trust/**"
+      - "feed.config.json"
       - "marketplace.json"
       - "protocol.lock.json"
       - "scripts/**"
       - "package.json"
       - "package-lock.json"
       - ".github/workflows/check.yml"
+      - ".github/CODEOWNERS"
   push:
     branches: [main]
 

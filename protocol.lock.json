@@ -1,8 +1,12 @@
 {
   "repository": "https://github.com/cordisx/cordisx-protocol",
-  "commit": "c740d0b9d710512b995f0fb830ebf69c758d0e7b",
+  "commit": "31d3d6a41a01f859c3867f5bdc6ea31547d82c32",
   "schemas": {
-    "plugin": "schemas/marketplace-plugin.v1.schema.json",
-    "feed": "schemas/marketplace-feed.v1.schema.json"
+    "plugin": "schemas/marketplace-plugin.v3.schema.json",
+    "feed": "schemas/marketplace-feed.v3.schema.json",
+    "official": "schemas/marketplace-official.v1.schema.json",
+    "certification": "schemas/marketplace-certification.v1.schema.json",
+    "uiCommon": "schemas/ui-common.v1.schema.json",
+    "lifecycleCommon": "schemas/plugin-lifecycle-common.v1.schema.json"
   }
 }

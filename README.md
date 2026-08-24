@@ -6,8 +6,10 @@ Public, pull-request-driven discovery catalog for CordisX plugins.
 - JSON feed: <https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json>
 - Protocol: <https://github.com/cordisx/cordisx-protocol>
 
-This first stage publishes metadata only. Catalog inclusion does not mean that
-CordisX has verified, signed, installed, or sandboxed a plugin.
+This repository publishes metadata only. Ordinary catalog inclusion is neither
+Official nor Certified. Those independent projections require a protected
+record under `trust/`; neither is a signature, permission grant, installation
+approval, sandbox claim, or absolute safety guarantee.
 
 ## Add a plugin
 

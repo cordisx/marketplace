@@ -11,6 +11,8 @@ outside this repository's authority.
 
 ```text
 plugins/<namespace>/<plugin>.json
+trust/official/<namespace>/<plugin>.json
+trust/certifications/<namespace>/<plugin>/<version>/<sha256>.json
               |
               v
 pinned cordisx-protocol schemas + semantic validator
@@ -37,6 +39,30 @@ CI parses every JSON entry, validates the pinned JSON Schema, enforces canonical
 source serialization and tuple uniqueness, validates the generated feed, and
 fails if `marketplace.json` is stale. Network reachability is not a merge-time
 identity guarantee and is not folded into deterministic format validation.
+
+## Trust records
+
+The version-3 feed has two independent top-level trust dimensions. Official
+publisher records bind stable plugin id, canonical CordisX source, trusted npm
+publisher identity, package namespace, and exact package name; they may
+continue across versions only while those values stay unchanged. Certification
+records bind one plugin id, semantic version, canonical source, sha256 artifact
+integrity, and review-policy version. A new version or digest never inherits a
+certification.
+
+Only JSON records under `trust/official/` and `trust/certifications/` can grant
+these projections. Both directories, their generator, the schema lock, and the
+generated feed are owned by `@cordisx/core` through CODEOWNERS. CI rejects
+unknown authority, identity mismatch, invalid status time, missing digest, and
+plugin-entry self-claims. Removing, revoking, or expiring a record changes the
+next deterministic feed; consumers replace their cached trust projection on
+refresh.
+
+The trust model is explicitly `protected-merge-chain-v1` with cryptographic
+attestation `unsupported`. Marketplace hosts no plugin code and does not
+pretend these records are signatures. Official and Certified do not grant
+permissions, bypass install review, or relax Package Store, sandbox, or
+generation lifecycle gates.
 
 ## PR and validation boundary
 
