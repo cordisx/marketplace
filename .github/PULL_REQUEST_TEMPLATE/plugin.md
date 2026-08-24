@@ -5,5 +5,7 @@
 - [ ] I ran `npm run build` and committed the generated `marketplace.json`.
 - [ ] I ran `npm run check` successfully.
 - [ ] The entry contains discovery metadata only and no credentials or executable code.
+- [ ] The plugin entry and package manifest do not self-declare Official or Certified.
 
-Passing catalog validation is not a security review or installation approval.
+Passing catalog validation is not Official status, certification, a security
+review, or installation approval.

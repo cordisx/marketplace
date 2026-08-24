@@ -6,7 +6,8 @@
 2. Use a lowercase stable `id` and your canonical public HTTPS repository URL
    as `source`.
 3. Fill in discovery metadata only. Do not include tokens, executable code, or
-   unsupported permission claims.
+   unsupported permission claims. Never add `official`, `certified`, or an
+   equivalent self-asserted trust field to a plugin entry or manifest.
 4. Run `npm ci`, `npm run build`, and `npm run check`.
 5. Commit both your plugin entry and the regenerated `marketplace.json`, then
    open a pull request.
@@ -29,4 +30,7 @@ Normal CI uses the exact public commit in `protocol.lock.json`.
 
 Passing validation proves only that the metadata conforms to the discovery
 format. It is not a code audit, identity verification, signature check, safety
-review, or installation approval.
+review, or installation approval. Official and Certified are separately
+granted through the CODEOWNERS-protected process documented in
+[`trust/README.md`](trust/README.md); plugin contributors cannot grant either
+through discovery or package metadata.
