@@ -34,3 +34,8 @@ review, or installation approval. Official and Certified are separately
 granted through the CODEOWNERS-protected process documented in
 [`trust/README.md`](trust/README.md); plugin contributors cannot grant either
 through discovery or package metadata.
+
+Official is a Marketplace product identity signal only. Certified is bound to
+one exact version and digest; only a Host-verified active record can become a
+permission eligibility input, and the PermissionBroker remains the sole owner
+of capability allowlists and constrained grants.
