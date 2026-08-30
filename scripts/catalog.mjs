@@ -40,6 +40,15 @@ const validateFeedSchema = validator('feed')
 const validateOfficialSchema = validator('official')
 const validateCertificationSchema = validator('certification')
 
+/** Testable catalog boundary: plugin documents cannot carry trust self-claims. */
+export function validateMarketplacePluginDocument(value) {
+  const valid = validatePluginSchema(value)
+  return Object.freeze({
+    valid,
+    errors: Object.freeze((validatePluginSchema.errors ?? []).map(error => Object.freeze({ ...error }))),
+  })
+}
+
 export function canonicalSource(value) {
   const url = new URL(value)
   if (url.protocol !== 'https:' || url.username !== '' || url.password !== '' || url.search !== '' || url.hash !== '') {

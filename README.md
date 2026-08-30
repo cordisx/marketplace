@@ -7,9 +7,12 @@ Public, pull-request-driven discovery catalog for CordisX plugins.
 - Protocol: <https://github.com/cordisx/cordisx-protocol>
 
 This repository publishes metadata only. Ordinary catalog inclusion is neither
-Official nor Certified. Those independent projections require a protected
-record under `trust/`; neither is a signature, permission grant, installation
-approval, sandbox claim, or absolute safety guarantee.
+Official nor Certified. Those independent, stackable projections require a
+protected record under `trust/`. Official only affects Marketplace identity and
+product priority. Certified means the exact artifact conforms to the named
+CordisX review policy; it is not an absolute safety guarantee. Its Host-owned
+permission eligibility projection is not itself a grant and never changes
+non-DOM permission review, installation, sandbox, or lifecycle gates.
 
 ## Add a plugin
 

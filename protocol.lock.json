@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/cordisx/cordisx-protocol",
-  "commit": "31d3d6a41a01f859c3867f5bdc6ea31547d82c32",
+  "commit": "4b9a9f12af544cbbdef04be35454a50cbbf54404",
   "schemas": {
     "plugin": "schemas/marketplace-plugin.v3.schema.json",
     "feed": "schemas/marketplace-feed.v3.schema.json",
