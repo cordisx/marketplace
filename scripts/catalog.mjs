@@ -1,4 +1,4 @@
-import { readFile, readdir, writeFile } from 'node:fs/promises'
+import { readdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import Ajv2020 from 'ajv/dist/2020.js'
@@ -20,10 +20,14 @@ async function loadSchema(relativePath) {
   return response.json()
 }
 
-const schemas = new Map(await Promise.all(Object.entries(lock.schemas).map(async ([name, relativePath]) => [
-  name,
-  await loadSchema(relativePath),
-])))
+const schemas = new Map(
+  await Promise.all(
+    Object.entries(lock.schemas).map(async ([name, relativePath]) => [
+      name,
+      await loadSchema(relativePath),
+    ]),
+  ),
+)
 const ajv = new Ajv2020({ allErrors: true, strict: true, allowUnionTypes: true })
 addFormats(ajv)
 for (const schema of schemas.values()) ajv.addSchema(schema)
@@ -114,10 +118,16 @@ function instant(value, label, errors) {
 
 function validatePluginLocalization(plugin, label, errors) {
   try {
-    if (canonicalLocale(plugin.fallbackLocale) !== plugin.fallbackLocale) errors.push(`${label}.fallbackLocale must use canonical serialization`)
+    if (canonicalLocale(plugin.fallbackLocale) !== plugin.fallbackLocale) {
+      errors.push(`${label}.fallbackLocale must use canonical serialization`)
+    }
     for (const [locale, localization] of Object.entries(plugin.localizations ?? {})) {
-      if (canonicalLocale(locale) !== locale) errors.push(`${label}.localizations locale must use canonical serialization: ${locale}`)
-      if (locale === plugin.fallbackLocale) errors.push(`${label}.localizations must not repeat fallbackLocale ${locale}`)
+      if (canonicalLocale(locale) !== locale) {
+        errors.push(`${label}.localizations locale must use canonical serialization: ${locale}`)
+      }
+      if (locale === plugin.fallbackLocale) {
+        errors.push(`${label}.localizations must not repeat fallbackLocale ${locale}`)
+      }
       if (localization.authors !== undefined && localization.authors.length !== plugin.authors.length) {
         errors.push(`${label}.localizations.${locale}.authors must preserve base author order and length`)
       }
@@ -157,12 +167,20 @@ export function evaluateTrustRecords(plugins, official, certifications, evaluate
       errors.push(`official identity does not exactly match a current plugin artifact: ${record.identity.pluginId}`)
     }
     const verifiedAt = instant(record.verifiedAt, `official ${record.identity.pluginId}.verifiedAt`, errors)
-    const revokedAt = record.revokedAt === undefined ? undefined : instant(record.revokedAt, `official ${record.identity.pluginId}.revokedAt`, errors)
-    if (verifiedAt > evaluatedAt) errors.push(`official ${record.identity.pluginId}.verifiedAt must not be after generatedAt`)
-    if (record.status === 'active' && revokedAt !== undefined) errors.push(`active official ${record.identity.pluginId} must not include revokedAt`)
+    const revokedAt = record.revokedAt === undefined
+      ? undefined
+      : instant(record.revokedAt, `official ${record.identity.pluginId}.revokedAt`, errors)
+    if (verifiedAt > evaluatedAt) {
+      errors.push(`official ${record.identity.pluginId}.verifiedAt must not be after generatedAt`)
+    }
+    if (record.status === 'active' && revokedAt !== undefined) {
+      errors.push(`active official ${record.identity.pluginId} must not include revokedAt`)
+    }
     if (record.status === 'revoked') {
       if (revokedAt === undefined) errors.push(`revoked official ${record.identity.pluginId} requires revokedAt`)
-      else if (revokedAt < verifiedAt || revokedAt > evaluatedAt) errors.push(`official ${record.identity.pluginId}.revokedAt is outside the valid interval`)
+      else if (revokedAt < verifiedAt || revokedAt > evaluatedAt) {
+        errors.push(`official ${record.identity.pluginId}.revokedAt is outside the valid interval`)
+      }
     }
   }
 
@@ -173,24 +191,42 @@ export function evaluateTrustRecords(plugins, official, certifications, evaluate
     certificationIdentities.add(identity)
     const plugin = pluginByIdentity.get(`${record.identity.canonicalSource}\u0000${record.identity.pluginId}`)
     if (plugin === undefined || plugin.artifact === undefined || !sameCertificationIdentity(record, plugin)) {
-      errors.push(`certification does not exactly match a current plugin artifact: ${record.identity.pluginId}@${record.identity.version}`)
+      errors.push(
+        `certification does not exactly match a current plugin artifact: ${record.identity.pluginId}@${record.identity.version}`,
+      )
     }
     const reviewedAt = instant(record.reviewedAt, `certification ${record.identity.pluginId}.reviewedAt`, errors)
     const expiresAt = instant(record.expiresAt, `certification ${record.identity.pluginId}.expiresAt`, errors)
-    const revokedAt = record.revokedAt === undefined ? undefined : instant(record.revokedAt, `certification ${record.identity.pluginId}.revokedAt`, errors)
-    if (reviewedAt > evaluatedAt) errors.push(`certification ${record.identity.pluginId}.reviewedAt must not be after generatedAt`)
-    if (expiresAt <= reviewedAt) errors.push(`certification ${record.identity.pluginId}.expiresAt must be after reviewedAt`)
+    const revokedAt = record.revokedAt === undefined
+      ? undefined
+      : instant(record.revokedAt, `certification ${record.identity.pluginId}.revokedAt`, errors)
+    if (reviewedAt > evaluatedAt) {
+      errors.push(`certification ${record.identity.pluginId}.reviewedAt must not be after generatedAt`)
+    }
+    if (expiresAt <= reviewedAt) {
+      errors.push(`certification ${record.identity.pluginId}.expiresAt must be after reviewedAt`)
+    }
     if (record.status === 'active') {
-      if (revokedAt !== undefined) errors.push(`active certification ${record.identity.pluginId} must not include revokedAt`)
-      if (expiresAt <= evaluatedAt) errors.push(`expired certification ${record.identity.pluginId} cannot remain active`)
+      if (revokedAt !== undefined) {
+        errors.push(`active certification ${record.identity.pluginId} must not include revokedAt`)
+      }
+      if (expiresAt <= evaluatedAt) {
+        errors.push(`expired certification ${record.identity.pluginId} cannot remain active`)
+      }
     }
     if (record.status === 'expired') {
-      if (revokedAt !== undefined) errors.push(`expired certification ${record.identity.pluginId} must not include revokedAt`)
-      if (expiresAt > evaluatedAt) errors.push(`unexpired certification ${record.identity.pluginId} cannot be marked expired`)
+      if (revokedAt !== undefined) {
+        errors.push(`expired certification ${record.identity.pluginId} must not include revokedAt`)
+      }
+      if (expiresAt > evaluatedAt) {
+        errors.push(`unexpired certification ${record.identity.pluginId} cannot be marked expired`)
+      }
     }
     if (record.status === 'revoked') {
       if (revokedAt === undefined) errors.push(`revoked certification ${record.identity.pluginId} requires revokedAt`)
-      else if (revokedAt < reviewedAt || revokedAt > evaluatedAt) errors.push(`certification ${record.identity.pluginId}.revokedAt is outside the valid interval`)
+      else if (revokedAt < reviewedAt || revokedAt > evaluatedAt) {
+        errors.push(`certification ${record.identity.pluginId}.revokedAt is outside the valid interval`)
+      }
     }
   }
   return errors
@@ -230,7 +266,9 @@ async function main() {
       continue
     }
     try {
-      if (canonicalSource(plugin.source) !== plugin.source) errors.push(`${relative}: source must use canonical serialization`)
+      if (canonicalSource(plugin.source) !== plugin.source) {
+        errors.push(`${relative}: source must use canonical serialization`)
+      }
     } catch (error) {
       errors.push(`${relative}: ${error instanceof Error ? error.message : String(error)}`)
     }
@@ -309,12 +347,16 @@ async function main() {
   if (mode === 'build') {
     if (errors.length > 0) throw new Error(errors.join('\n'))
     await writeFile(outputPath, generated)
-    console.log(`generated marketplace.json with ${plugins.length} plugin(s), ${official.length} official record(s), and ${certifications.length} certification record(s)`)
+    console.log(
+      `generated marketplace.json with ${plugins.length} plugin(s), ${official.length} official record(s), and ${certifications.length} certification record(s)`,
+    )
   } else if (mode === 'check') {
     const committed = await readFile(outputPath, 'utf8').catch(() => '')
     if (committed !== generated) errors.push('marketplace.json is stale; run npm run build')
     if (errors.length > 0) throw new Error(errors.join('\n'))
-    console.log(`marketplace catalog check: ${plugins.length} plugin(s), ${official.length} official record(s), ${certifications.length} certification record(s), all checks passed`)
+    console.log(
+      `marketplace catalog check: ${plugins.length} plugin(s), ${official.length} official record(s), ${certifications.length} certification record(s), all checks passed`,
+    )
   } else {
     throw new Error('Usage: node scripts/catalog.mjs <build|check>')
   }

@@ -72,7 +72,10 @@ test('rejects publisher/source migration until Official is re-verified', () => {
   migrated.artifact.publisherIdentity = 'npm:@example'
   migrated.artifact.packageNamespace = '@example'
   migrated.artifact.packageName = '@example/notes'
-  assert.match(evaluateTrustRecords([migrated], [official], [], GENERATED_AT).join('\n'), /official identity does not exactly match/)
+  assert.match(
+    evaluateTrustRecords([migrated], [official], [], GENERATED_AT).join('\n'),
+    /official identity does not exactly match/,
+  )
 })
 
 test('does not inherit certification across source, version, or digest changes', () => {
@@ -80,7 +83,10 @@ test('does not inherit certification across source, version, or digest changes',
   rebuilt.version = '1.4.0'
   rebuilt.source = 'https://github.com/cordisx/notes-next'
   rebuilt.artifact.integrity = 'sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
-  assert.match(evaluateTrustRecords([rebuilt], [], [certification], GENERATED_AT).join('\n'), /certification does not exactly match/)
+  assert.match(
+    evaluateTrustRecords([rebuilt], [], [certification], GENERATED_AT).join('\n'),
+    /certification does not exactly match/,
+  )
 })
 
 test('rejects an expired certification that remains active', () => {
