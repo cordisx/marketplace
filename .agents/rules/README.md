@@ -1,5 +1,6 @@
 # Marketplace Maintenance Rules
 
+- Follow the [organization file-size rule](https://github.com/cordisx/cordisxmono/blob/main/.agents/rules/file-size.md) for formatting and responsibility-based splitting guidance.
 - Pin protocol schemas to an exact public commit in `protocol.lock.json`.
 - Reject entries that fail the pinned schema, canonical-source rule, or `(source, id)` uniqueness rule.
 - Require lowercase stable plugin ids and canonical HTTPS source repositories.
