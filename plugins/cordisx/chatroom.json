@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+  "schemaVersion": 3,
+  "id": "chatroom",
+  "fallbackLocale": "en",
+  "name": "Chatroom",
+  "description": "Coordinates internal Room relationships, Agent identity, message routing, approvals, and collaboration timelines.",
+  "localizations": {
+    "zh-CN": {
+      "name": "Chatroom",
+      "description": "为内部房间提供 Agent 团队关系、身份、消息路由、审批与协作时间线。",
+      "authors": ["CordisX 贡献者"],
+      "keywords": ["房间", "协作", "智能体"]
+    }
+  },
+  "version": "0.1.0",
+  "source": "https://github.com/cordisx/plugin-chatroom",
+  "homepage": "https://github.com/cordisx/plugin-chatroom",
+  "license": "MIT",
+  "compatibility": {
+    "cordisx": "0.1.0-beta.2"
+  },
+  "authors": [
+    {
+      "name": "CordisX contributors"
+    }
+  ],
+  "keywords": ["room", "collaboration", "agents"]
+}

@@ -22,12 +22,12 @@
       "schemaVersion": 3,
       "id": "slot-showcase",
       "fallbackLocale": "en",
-      "name": "Slot Showcase",
-      "description": "Demonstrates all five CordisX semantic UI extension points.",
+      "name": "Slot Showcase (Development Example)",
+      "description": "Development example for the five CordisX semantic UI extension points. Discovery only; no installable artifact is published.",
       "localizations": {
         "zh-CN": {
-          "name": "扩展点展示",
-          "description": "展示 CordisX 的五个语义化界面扩展点。",
+          "name": "扩展点展示（开发示例）",
+          "description": "用于展示 CordisX 五个语义化界面扩展点的开发示例。仅供发现，未发布可安装产物。",
           "authors": [
             "CordisX 团队"
           ],
@@ -53,6 +53,123 @@
       "keywords": [
         "demo",
         "slots"
+      ]
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+      "schemaVersion": 3,
+      "id": "agent-trace-showcase",
+      "fallbackLocale": "en",
+      "name": "Agent Trace Showcase",
+      "description": "Read-only Timeline of Host-projected Agent session events.",
+      "localizations": {
+        "zh-CN": {
+          "name": "Agent Trace 展示",
+          "description": "查看 Host 投影的只读 Agent 会话时间线。",
+          "authors": [
+            "YiJie"
+          ],
+          "keywords": [
+            "智能体",
+            "会话",
+            "时间线"
+          ]
+        }
+      },
+      "version": "0.1.0",
+      "source": "https://github.com/cordisx/plugin-agent-trace",
+      "homepage": "https://github.com/cordisx/plugin-agent-trace",
+      "license": "AGPL-3.0-or-later",
+      "compatibility": {
+        "cordisx": "0.1.0-beta.1"
+      },
+      "authors": [
+        {
+          "name": "YiJie"
+        }
+      ],
+      "keywords": [
+        "agent",
+        "session",
+        "timeline"
+      ]
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+      "schemaVersion": 3,
+      "id": "chatroom",
+      "fallbackLocale": "en",
+      "name": "Chatroom",
+      "description": "Coordinates internal Room relationships, Agent identity, message routing, approvals, and collaboration timelines.",
+      "localizations": {
+        "zh-CN": {
+          "name": "Chatroom",
+          "description": "为内部房间提供 Agent 团队关系、身份、消息路由、审批与协作时间线。",
+          "authors": [
+            "CordisX 贡献者"
+          ],
+          "keywords": [
+            "房间",
+            "协作",
+            "智能体"
+          ]
+        }
+      },
+      "version": "0.1.0",
+      "source": "https://github.com/cordisx/plugin-chatroom",
+      "homepage": "https://github.com/cordisx/plugin-chatroom",
+      "license": "MIT",
+      "compatibility": {
+        "cordisx": "0.1.0-beta.2"
+      },
+      "authors": [
+        {
+          "name": "CordisX contributors"
+        }
+      ],
+      "keywords": [
+        "room",
+        "collaboration",
+        "agents"
+      ]
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+      "schemaVersion": 3,
+      "id": "codex-ascension",
+      "fallbackLocale": "en",
+      "name": "Codex Ascension",
+      "description": "Presents five localized reasoning-intensity stages with an optional staged portrait and effects backdrop.",
+      "localizations": {
+        "zh-CN": {
+          "name": "Codex Ascension",
+          "description": "提供五档本地化思考强度主题，以及可选的分阶段人像和背景特效。",
+          "authors": [
+            "NWYLZW"
+          ],
+          "keywords": [
+            "思考强度",
+            "主题",
+            "背景"
+          ]
+        }
+      },
+      "version": "0.1.0",
+      "source": "https://github.com/cordisx/plugin-codex-ascension",
+      "homepage": "https://github.com/cordisx/plugin-codex-ascension/tree/main/plugin",
+      "license": "MIT",
+      "compatibility": {
+        "cordisx": "0.1.0-beta.1"
+      },
+      "authors": [
+        {
+          "name": "NWYLZW"
+        }
+      ],
+      "keywords": [
+        "reasoning",
+        "theme",
+        "backdrop"
       ]
     }
   ],
