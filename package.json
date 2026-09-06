@@ -8,12 +8,16 @@
     "test": "node --test tests/*.test.mjs",
     "check": "node scripts/catalog.mjs check && npm test",
     "format": "dprint fmt",
-    "format:check": "dprint check"
+    "format:check": "dprint check",
+    "lint:source": "eslint .",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
-    "dprint": "0.57.1"
+    "dprint": "0.57.1",
+    "@cordisx/eslint-config": "github:cordisx/cordisxmono#c63c2e8c2ba7e11502934a52ad2ce3734e804cdc",
+    "eslint": "9.39.4"
   },
   "engines": {
     "node": ">=22.19"
