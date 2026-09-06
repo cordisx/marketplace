@@ -3,12 +3,12 @@
   "schemaVersion": 3,
   "id": "slot-showcase",
   "fallbackLocale": "en",
-  "name": "Slot Showcase",
-  "description": "Demonstrates all five CordisX semantic UI extension points.",
+  "name": "Slot Showcase (Development Example)",
+  "description": "Development example for the five CordisX semantic UI extension points. Discovery only; no installable artifact is published.",
   "localizations": {
     "zh-CN": {
-      "name": "扩展点展示",
-      "description": "展示 CordisX 的五个语义化界面扩展点。",
+      "name": "扩展点展示（开发示例）",
+      "description": "用于展示 CordisX 五个语义化界面扩展点的开发示例。仅供发现，未发布可安装产物。",
       "authors": ["CordisX 团队"],
       "keywords": ["演示", "扩展点"]
     }
