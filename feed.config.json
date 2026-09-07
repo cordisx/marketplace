@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T12:31:00Z",
+  "generatedAt": "2026-09-07T18:30:00Z",
   "trust": {
     "authority": "cordisx.marketplace.codeowners/v1",
     "root": "https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json",
@@ -9,7 +9,9 @@
   "fallbackLocale": "en",
   "name": "CordisX Community Marketplace",
   "localizations": {
-    "zh-CN": { "name": "CordisX 社区插件商店" }
+    "zh-CN": {
+      "name": "CordisX 社区插件商店"
+    }
   },
   "homepage": "https://cordisx.github.io/marketplace/"
 }

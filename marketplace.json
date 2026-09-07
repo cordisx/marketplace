@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v3.schema.json",
   "schemaVersion": 3,
-  "generatedAt": "2026-08-24T12:31:00Z",
+  "generatedAt": "2026-09-07T18:30:00Z",
   "trust": {
     "authority": "cordisx.marketplace.codeowners/v1",
     "root": "https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json",
@@ -53,6 +53,49 @@
       "keywords": [
         "demo",
         "slots"
+      ]
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+      "schemaVersion": 3,
+      "id": "plugin-composer-animal",
+      "fallbackLocale": "en",
+      "name": "pet",
+      "description": "An interactive Composer companion with pointer following, dragging, and expressive reactions. Requires Host source d3e28dc (see README), not the older published beta. No packaged installer yet.",
+      "localizations": {
+        "zh-CN": {
+          "name": "pet",
+          "description": "陪伴在输入框旁的互动宠物，支持鼠标跟随、拖拽掉落和表情互动。需使用 README 指定的 Host 源码 d3e28dc，已发布的旧 beta 不适用；暂未提供安装包。",
+          "authors": [
+            "CordisX 团队"
+          ],
+          "keywords": [
+            "宠物",
+            "陪伴",
+            "输入框",
+            "动画"
+          ]
+        }
+      },
+      "version": "0.1.0",
+      "source": "https://github.com/cordisx/plugin-pet",
+      "homepage": "https://github.com/cordisx/plugin-pet#development-dependency-checkpoint",
+      "license": "MIT",
+      "compatibility": {
+        "cordisx": "=0.1.0-beta.2"
+      },
+      "authors": [
+        {
+          "name": "CordisX",
+          "url": "https://github.com/cordisx"
+        }
+      ],
+      "keywords": [
+        "pet",
+        "companion",
+        "composer",
+        "avatar",
+        "animation"
       ]
     }
   ],
