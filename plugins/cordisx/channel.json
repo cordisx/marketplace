@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+  "schemaVersion": 3,
+  "id": "channel",
+  "fallbackLocale": "en",
+  "name": "Channel",
+  "description": "Channel account, binding, credential, and adapter management for CordisX. Package verification source only; no packaged installer yet.",
+  "localizations": {
+    "zh-CN": {
+      "name": "Channel",
+      "description": "为 CordisX 提供渠道账号、绑定、凭据和适配器管理。当前仅提供包验证源码，暂未提供安装包。",
+      "authors": [
+        "CordisX 团队"
+      ],
+      "keywords": [
+        "渠道",
+        "账号",
+        "绑定",
+        "适配器"
+      ]
+    }
+  },
+  "version": "0.1.0",
+  "source": "https://github.com/cordisx/plugin-channel",
+  "homepage": "https://github.com/cordisx/plugin-channel#readme",
+  "license": "AGPL-3.0-or-later",
+  "compatibility": {
+    "cordisx": "=0.1.0-beta.2"
+  },
+  "authors": [
+    {
+      "name": "CordisX",
+      "url": "https://github.com/cordisx"
+    }
+  ],
+  "keywords": [
+    "channel",
+    "account",
+    "binding",
+    "adapter"
+  ]
+}
