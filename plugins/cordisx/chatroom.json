@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+  "schemaVersion": 3,
+  "id": "chatroom",
+  "fallbackLocale": "en",
+  "name": "Chatroom",
+  "description": "Room collaboration, Agent membership, message routing, and shared timelines for CordisX. Source installation only; no packaged installer yet.",
+  "localizations": {
+    "zh-CN": {
+      "name": "Chatroom",
+      "description": "为 CordisX 提供房间协作、Agent 成员关系、消息路由和共享时间线。当前仅支持源码安装，暂未提供安装包。",
+      "authors": ["CordisX 团队"],
+      "keywords": ["房间", "协作", "智能体", "时间线"]
+    }
+  },
+  "version": "0.1.0",
+  "source": "https://github.com/cordisx/plugin-chatroom",
+  "homepage": "https://github.com/cordisx/plugin-chatroom#readme",
+  "license": "MIT",
+  "compatibility": { "cordisx": "=0.1.0-beta.2" },
+  "authors": [{ "name": "CordisX", "url": "https://github.com/cordisx" }],
+  "keywords": ["room", "collaboration", "agent", "timeline"]
+}

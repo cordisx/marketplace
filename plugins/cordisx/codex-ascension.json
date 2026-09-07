@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+  "schemaVersion": 3,
+  "id": "codex-ascension",
+  "fallbackLocale": "en",
+  "name": "Codex Ascension",
+  "description": "A theatrical reasoning-intensity presentation and optional session backdrop for CordisX. Source installation only; no packaged installer yet.",
+  "localizations": {
+    "zh-CN": {
+      "name": "Codex Ascension",
+      "description": "为 CordisX 提供戏剧化的推理强度展示和可选会话背景。当前仅支持源码安装，暂未提供安装包。",
+      "authors": ["CordisX 团队"],
+      "keywords": ["推理", "展示", "会话", "背景"]
+    }
+  },
+  "version": "0.1.0",
+  "source": "https://github.com/cordisx/plugin-codex-ascension",
+  "homepage": "https://github.com/cordisx/plugin-codex-ascension/blob/main/plugin/README.md",
+  "license": "MIT",
+  "compatibility": { "cordisx": "=0.1.0-beta.1" },
+  "authors": [{ "name": "CordisX", "url": "https://github.com/cordisx" }],
+  "keywords": ["reasoning", "presentation", "session", "backdrop"]
+}
