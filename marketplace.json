@@ -184,6 +184,48 @@
     {
       "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
       "schemaVersion": 3,
+      "id": "cli-proxy-api",
+      "fallbackLocale": "en",
+      "name": "CLI Proxy API",
+      "description": "CLIProxyAPI provider sessions, models, turns, and approvals for CordisX. Source installation only; no packaged installer yet.",
+      "localizations": {
+        "zh-CN": {
+          "name": "CLI Proxy API",
+          "description": "为 CordisX 提供 CLIProxyAPI 的会话、模型、回合和审批能力。当前仅支持源码安装，暂未提供安装包。",
+          "authors": [
+            "CordisX 团队"
+          ],
+          "keywords": [
+            "提供商",
+            "会话",
+            "模型",
+            "审批"
+          ]
+        }
+      },
+      "version": "0.1.0",
+      "source": "https://github.com/cordisx/plugin-cli-proxy-api",
+      "homepage": "https://github.com/cordisx/plugin-cli-proxy-api#readme",
+      "license": "AGPL-3.0-or-later",
+      "compatibility": {
+        "cordisx": "=0.1.0-beta.2"
+      },
+      "authors": [
+        {
+          "name": "CordisX",
+          "url": "https://github.com/cordisx"
+        }
+      ],
+      "keywords": [
+        "provider",
+        "session",
+        "model",
+        "approval"
+      ]
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+      "schemaVersion": 3,
       "id": "codex-ascension",
       "fallbackLocale": "en",
       "name": "Codex Ascension",
