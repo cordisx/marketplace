@@ -14,14 +14,23 @@ test('publishes the four reviewed discovery entries alongside newer catalog addi
   ])
 })
 
-test('keeps product listings discovery-only without fabricated install metadata', () => {
-  const productIds = new Set(['agent-trace-showcase', 'chatroom', 'codex-ascension'])
+test('keeps source-only products without fabricated install metadata', () => {
+  const productIds = new Set(['agent-trace-showcase', 'codex-ascension'])
   const products = feed.plugins.filter(plugin => productIds.has(plugin.id))
-  assert.equal(products.length, 3)
+  assert.equal(products.length, 2)
   for (const plugin of products) {
     assert.equal(Object.hasOwn(plugin, 'artifact'), false, plugin.id)
     assert.equal(Object.hasOwn(plugin, 'manifest'), false, plugin.id)
   }
+})
+
+test('Chatroom uses a versioned owner release URL and an exact digest', () => {
+  const chatroom = feed.plugins.find(plugin => plugin.id === 'chatroom')
+  assert.ok(chatroom?.artifact)
+  assert.ok(chatroom.artifact.downloadUrl.startsWith(`${chatroom.source}/releases/download/v${chatroom.version}/`))
+  assert.match(chatroom.artifact.integrity, /^sha256:[a-f0-9]{64}$/)
+  assert.equal(chatroom.artifact.publisherIdentity, `npm:${chatroom.artifact.packageNamespace}`)
+  assert.ok(chatroom.artifact.packageName.startsWith(`${chatroom.artifact.packageNamespace}/`))
 })
 
 test('labels the Host slot showcase as a non-installable development example', () => {
