@@ -22,6 +22,7 @@
   },
   "version": "0.1.0",
   "source": "https://github.com/cordisx/plugin-channel",
+  "icon": "https://raw.githubusercontent.com/cordisx/plugin-channel/1b6def3a53758e5d2fd93af922d2ed29b2706822/assets/channel.png",
   "homepage": "https://github.com/cordisx/plugin-channel#readme",
   "license": "AGPL-3.0-or-later",
   "compatibility": {

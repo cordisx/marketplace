@@ -21,7 +21,6 @@ test('keeps product listings discovery-only without fabricated install metadata'
   for (const plugin of products) {
     assert.equal(Object.hasOwn(plugin, 'artifact'), false, plugin.id)
     assert.equal(Object.hasOwn(plugin, 'manifest'), false, plugin.id)
-    assert.equal(Object.hasOwn(plugin, 'icon'), false, plugin.id)
   }
 })
 
@@ -31,4 +30,29 @@ test('labels the Host slot showcase as a non-installable development example', (
   assert.match(showcase.name, /Development Example/)
   assert.match(showcase.description, /no installable artifact/i)
   assert.equal(Object.hasOwn(showcase, 'artifact'), false)
+})
+
+// Catalog images must remain pinned to reviewed owner assets, never a moving branch.
+test('reviewed plugin icons reference immutable PNGs in their owning repositories', () => {
+  const ids = new Set([
+    'slot-showcase',
+    'agent-trace-showcase',
+    'chatroom',
+    'codex-ascension',
+    'channel',
+    'cli-proxy-api',
+    'plugin-composer-animal',
+    'game-room',
+    'wallet',
+  ])
+  const reviewed = feed.plugins.filter(plugin => ids.has(plugin.id))
+  assert.equal(reviewed.length, ids.size)
+  for (const plugin of reviewed) {
+    const source = new URL(plugin.source)
+    const icon = new URL(plugin.icon)
+    assert.equal(icon.origin, 'https://raw.githubusercontent.com', plugin.id)
+    assert.ok(icon.pathname.startsWith(`${source.pathname}/`), plugin.id)
+    const asset = icon.pathname.slice(source.pathname.length + 1)
+    assert.match(asset, /^[a-f0-9]{40}\/.+\.png$/, plugin.id)
+  }
 })

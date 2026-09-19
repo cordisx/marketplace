@@ -15,6 +15,7 @@
   },
   "version": "0.1.0",
   "source": "https://github.com/cordisx/plugin-codex-ascension",
+  "icon": "https://raw.githubusercontent.com/cordisx/plugin-codex-ascension/25f5cf7caafd4b43eb1c6df92972e2a409752760/plugin/src/assets/identity/ascension.png",
   "homepage": "https://github.com/cordisx/plugin-codex-ascension/blob/main/plugin/README.md",
   "license": "MIT",
   "compatibility": { "cordisx": "=0.1.0-beta.1" },

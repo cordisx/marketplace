@@ -15,6 +15,7 @@
   },
   "version": "0.1.0",
   "source": "https://github.com/cordisx/plugin-chatroom",
+  "icon": "https://raw.githubusercontent.com/cordisx/plugin-chatroom/070bc29f651df033975e42bbb2cbd3a44054a60c/assets/chatroom.png",
   "homepage": "https://github.com/cordisx/plugin-chatroom#readme",
   "license": "MIT",
   "compatibility": { "cordisx": "=0.1.0-beta.2" },
