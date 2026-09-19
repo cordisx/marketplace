@@ -14,18 +14,15 @@ test('publishes the four reviewed discovery entries alongside newer catalog addi
   ])
 })
 
-test('keeps source-only products without fabricated install metadata', () => {
-  const productIds = new Set(['agent-trace-showcase', 'codex-ascension'])
-  const products = feed.plugins.filter(plugin => productIds.has(plugin.id))
-  assert.equal(products.length, 2)
-  for (const plugin of products) {
-    assert.equal(Object.hasOwn(plugin, 'artifact'), false, plugin.id)
-    assert.equal(Object.hasOwn(plugin, 'manifest'), false, plugin.id)
-  }
+test('does not fabricate a scoped artifact identity for the unscoped Pet release', () => {
+  const plugin = feed.plugins.find(plugin => plugin.id === 'plugin-composer-animal')
+  assert.ok(plugin)
+  assert.equal(Object.hasOwn(plugin, 'artifact'), false)
+  assert.equal(Object.hasOwn(plugin, 'manifest'), false)
 })
 
 test('released owner packages use versioned URLs and exact digests', () => {
-  for (const id of ['chatroom', 'channel', 'cli-proxy-api']) {
+  for (const id of ['chatroom', 'channel', 'cli-proxy-api', 'agent-trace-showcase', 'codex-ascension']) {
     const plugin = feed.plugins.find(plugin => plugin.id === id)
     assert.ok(plugin?.artifact, id)
     assert.ok(plugin.artifact.downloadUrl.startsWith(`${plugin.source}/releases/download/v${plugin.version}/`), id)

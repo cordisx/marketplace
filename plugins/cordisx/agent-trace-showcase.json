@@ -4,17 +4,24 @@
   "id": "agent-trace-showcase",
   "fallbackLocale": "en",
   "name": "Agent Trace",
-  "description": "Read-only Agent and Session event timeline for CordisX. Source preview only; real-App integration verification is still pending.",
+  "description": "Read-only Agent and Session event timeline for CordisX. Installable preview package; real-App integration verification is still pending.",
   "localizations": {
     "zh-CN": {
       "name": "Agent Trace",
-      "description": "CordisX 的只读 Agent 与 Session 事件时间线。当前为源码预览，仍待真实应用集成验证。",
+      "description": "CordisX 的只读 Agent 与 Session 事件时间线。已提供可安装的预览包，仍待真实应用集成验证。",
       "authors": ["CordisX 团队"],
       "keywords": ["智能体", "会话", "追踪", "时间线"]
     }
   },
-  "version": "0.1.0",
+  "version": "0.1.2",
   "source": "https://github.com/cordisx/plugin-agent-trace",
+  "artifact": {
+    "publisherIdentity": "npm:@cordisx",
+    "packageNamespace": "@cordisx",
+    "packageName": "@cordisx/agent-trace-showcase",
+    "downloadUrl": "https://github.com/cordisx/plugin-agent-trace/releases/download/v0.1.2/cordisx-agent-trace-showcase-0.1.2.tgz",
+    "integrity": "sha256:03122ee3f8ecae1170cfd6a0e850f6074edbb7a0eee0b886538d9c16682b52dd"
+  },
   "icon": "https://raw.githubusercontent.com/cordisx/plugin-agent-trace/bf2448dd4f5a80180de768c5cd89a8eedfdb6a2e/assets/agent-trace.png",
   "homepage": "https://github.com/cordisx/plugin-agent-trace#readme",
   "license": "AGPL-3.0-or-later",
