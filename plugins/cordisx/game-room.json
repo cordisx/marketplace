@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+  "schemaVersion": 3,
+  "id": "game-room",
+  "fallbackLocale": "en",
+  "name": "Game Room",
+  "description": "Multi-server multiplayer game rooms with game packages and Agent seats. Experimental source installation; requires the exact Host/SDK revisions in the README, not a generic beta build.",
+  "localizations": {
+    "zh-CN": {
+      "name": "Game Room",
+      "description": "多服务多人游戏房间、游戏包与 Agent 席位。实验性源码安装；需使用 README 指定的精确 Host/SDK 源码版本，非通用 beta 安装。",
+      "authors": [
+        "CordisX 团队"
+      ]
+    }
+  },
+  "version": "0.1.0",
+  "source": "https://github.com/cordisx/plugin-game-room",
+  "homepage": "https://github.com/cordisx/plugin-game-room/tree/main/client#readme",
+  "license": "MIT",
+  "compatibility": {
+    "cordisx": "=0.1.0-beta.3"
+  },
+  "authors": [
+    {
+      "name": "CordisX",
+      "url": "https://github.com/cordisx"
+    }
+  ],
+  "keywords": [
+    "games",
+    "rooms",
+    "agent"
+  ],
+  "icon": "https://raw.githubusercontent.com/cordisx/plugin-game-room/6fa8f010977320e98748c63b5a4f9391ab5a4804/client/assets/icon.png"
+}

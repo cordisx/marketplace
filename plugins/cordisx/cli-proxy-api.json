@@ -15,6 +15,7 @@
   },
   "version": "0.1.0",
   "source": "https://github.com/cordisx/plugin-cli-proxy-api",
+  "icon": "https://raw.githubusercontent.com/cordisx/plugin-cli-proxy-api/12d5daa36dbd5dd565b96d22859afb1d0f3f3e1d/assets/icon.png",
   "homepage": "https://github.com/cordisx/plugin-cli-proxy-api#readme",
   "license": "AGPL-3.0-or-later",
   "compatibility": { "cordisx": "=0.1.0-beta.2" },

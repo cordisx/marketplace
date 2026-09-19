@@ -15,6 +15,7 @@
   },
   "version": "0.1.0",
   "source": "https://github.com/cordisx/cordisx",
+  "icon": "https://raw.githubusercontent.com/cordisx/cordisx/34aadc3c5e5991cf0ad559877bc17ef5dcbd84af/examples/plugins/slot-showcase/icon.png",
   "homepage": "https://github.com/cordisx/cordisx",
   "license": "UNLICENSED",
   "compatibility": {

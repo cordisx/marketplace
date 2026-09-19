@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+  "schemaVersion": 3,
+  "id": "wallet",
+  "fallbackLocale": "en",
+  "name": "Economy",
+  "description": "Local virtual entertainment Token wallet and ledger. Experimental source installation; requires the exact Host/SDK revisions in the README, not a generic beta build.",
+  "localizations": {
+    "zh-CN": {
+      "name": "Economy",
+      "description": "本地虚拟娱乐 Token 钱包与账本。实验性源码安装；需使用 README 指定的精确 Host/SDK 源码版本，非通用 beta 安装。",
+      "authors": [
+        "CordisX 团队"
+      ]
+    }
+  },
+  "version": "0.1.0",
+  "source": "https://github.com/cordisx/plugin-economy",
+  "homepage": "https://github.com/cordisx/plugin-economy/tree/main/wallet#readme",
+  "license": "UNLICENSED",
+  "compatibility": {
+    "cordisx": "=0.1.0-beta.3"
+  },
+  "authors": [
+    {
+      "name": "CordisX",
+      "url": "https://github.com/cordisx"
+    }
+  ],
+  "keywords": [
+    "wallet",
+    "token",
+    "ledger"
+  ],
+  "icon": "https://raw.githubusercontent.com/cordisx/plugin-economy/bf205c4cad74dfa8323d84eeaded36b7451a1784/wallet/src/assets/economy.png"
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v3.schema.json",
   "schemaVersion": 3,
-  "generatedAt": "2026-09-07T20:10:21Z",
+  "generatedAt": "2026-09-19T13:56:30Z",
   "trust": {
     "authority": "cordisx.marketplace.codeowners/v1",
     "root": "https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json",
@@ -39,6 +39,7 @@
       },
       "version": "0.1.0",
       "source": "https://github.com/cordisx/cordisx",
+      "icon": "https://raw.githubusercontent.com/cordisx/cordisx/34aadc3c5e5991cf0ad559877bc17ef5dcbd84af/examples/plugins/slot-showcase/icon.png",
       "homepage": "https://github.com/cordisx/cordisx",
       "license": "UNLICENSED",
       "compatibility": {
@@ -79,6 +80,7 @@
       },
       "version": "0.1.0",
       "source": "https://github.com/cordisx/plugin-agent-trace",
+      "icon": "https://raw.githubusercontent.com/cordisx/plugin-agent-trace/bf2448dd4f5a80180de768c5cd89a8eedfdb6a2e/assets/agent-trace.png",
       "homepage": "https://github.com/cordisx/plugin-agent-trace#readme",
       "license": "AGPL-3.0-or-later",
       "compatibility": {
@@ -121,6 +123,7 @@
       },
       "version": "0.1.0",
       "source": "https://github.com/cordisx/plugin-channel",
+      "icon": "https://raw.githubusercontent.com/cordisx/plugin-channel/1b6def3a53758e5d2fd93af922d2ed29b2706822/assets/channel.png",
       "homepage": "https://github.com/cordisx/plugin-channel#readme",
       "license": "AGPL-3.0-or-later",
       "compatibility": {
@@ -163,6 +166,7 @@
       },
       "version": "0.1.0",
       "source": "https://github.com/cordisx/plugin-chatroom",
+      "icon": "https://raw.githubusercontent.com/cordisx/plugin-chatroom/070bc29f651df033975e42bbb2cbd3a44054a60c/assets/chatroom.png",
       "homepage": "https://github.com/cordisx/plugin-chatroom#readme",
       "license": "MIT",
       "compatibility": {
@@ -205,6 +209,7 @@
       },
       "version": "0.1.0",
       "source": "https://github.com/cordisx/plugin-cli-proxy-api",
+      "icon": "https://raw.githubusercontent.com/cordisx/plugin-cli-proxy-api/12d5daa36dbd5dd565b96d22859afb1d0f3f3e1d/assets/icon.png",
       "homepage": "https://github.com/cordisx/plugin-cli-proxy-api#readme",
       "license": "AGPL-3.0-or-later",
       "compatibility": {
@@ -247,6 +252,7 @@
       },
       "version": "0.1.0",
       "source": "https://github.com/cordisx/plugin-codex-ascension",
+      "icon": "https://raw.githubusercontent.com/cordisx/plugin-codex-ascension/25f5cf7caafd4b43eb1c6df92972e2a409752760/plugin/src/assets/identity/ascension.png",
       "homepage": "https://github.com/cordisx/plugin-codex-ascension/blob/main/plugin/README.md",
       "license": "MIT",
       "compatibility": {
@@ -268,14 +274,86 @@
     {
       "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
       "schemaVersion": 3,
+      "id": "wallet",
+      "fallbackLocale": "en",
+      "name": "Economy",
+      "description": "Local virtual entertainment Token wallet and ledger. Experimental source installation; requires the exact Host/SDK revisions in the README, not a generic beta build.",
+      "localizations": {
+        "zh-CN": {
+          "name": "Economy",
+          "description": "本地虚拟娱乐 Token 钱包与账本。实验性源码安装；需使用 README 指定的精确 Host/SDK 源码版本，非通用 beta 安装。",
+          "authors": [
+            "CordisX 团队"
+          ]
+        }
+      },
+      "version": "0.1.0",
+      "source": "https://github.com/cordisx/plugin-economy",
+      "homepage": "https://github.com/cordisx/plugin-economy/tree/main/wallet#readme",
+      "license": "UNLICENSED",
+      "compatibility": {
+        "cordisx": "=0.1.0-beta.3"
+      },
+      "authors": [
+        {
+          "name": "CordisX",
+          "url": "https://github.com/cordisx"
+        }
+      ],
+      "keywords": [
+        "wallet",
+        "token",
+        "ledger"
+      ],
+      "icon": "https://raw.githubusercontent.com/cordisx/plugin-economy/bf205c4cad74dfa8323d84eeaded36b7451a1784/wallet/src/assets/economy.png"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+      "schemaVersion": 3,
+      "id": "game-room",
+      "fallbackLocale": "en",
+      "name": "Game Room",
+      "description": "Multi-server multiplayer game rooms with game packages and Agent seats. Experimental source installation; requires the exact Host/SDK revisions in the README, not a generic beta build.",
+      "localizations": {
+        "zh-CN": {
+          "name": "Game Room",
+          "description": "多服务多人游戏房间、游戏包与 Agent 席位。实验性源码安装；需使用 README 指定的精确 Host/SDK 源码版本，非通用 beta 安装。",
+          "authors": [
+            "CordisX 团队"
+          ]
+        }
+      },
+      "version": "0.1.0",
+      "source": "https://github.com/cordisx/plugin-game-room",
+      "homepage": "https://github.com/cordisx/plugin-game-room/tree/main/client#readme",
+      "license": "MIT",
+      "compatibility": {
+        "cordisx": "=0.1.0-beta.3"
+      },
+      "authors": [
+        {
+          "name": "CordisX",
+          "url": "https://github.com/cordisx"
+        }
+      ],
+      "keywords": [
+        "games",
+        "rooms",
+        "agent"
+      ],
+      "icon": "https://raw.githubusercontent.com/cordisx/plugin-game-room/6fa8f010977320e98748c63b5a4f9391ab5a4804/client/assets/icon.png"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
+      "schemaVersion": 3,
       "id": "plugin-composer-animal",
       "fallbackLocale": "en",
       "name": "pet",
-      "description": "An interactive Composer companion with pointer following, dragging, and expressive reactions. Prebuilt archive available on GitHub Releases. Requires Host source d3e28dc (see README); the older published beta is not compatible.",
+      "description": "Interactive Composer companion with pet care and expressive reactions. Current source installation requires the exact Host/SDK revisions in the README; older release archives do not include this revision.",
       "localizations": {
         "zh-CN": {
           "name": "pet",
-          "description": "陪伴在输入框旁的互动宠物，支持鼠标跟随、拖拽掉落和表情互动。GitHub Release 提供预构建包，无需编译插件；需使用 README 指定的 Host 源码 d3e28dc，已发布的旧 beta 不适用。",
+          "description": "输入框旁的互动宠物，支持养成与表情反馈。当前源码安装需使用 README 指定的精确 Host/SDK 版本；旧版发布包不包含本次更新。",
           "authors": [
             "CordisX 团队"
           ],
@@ -289,7 +367,7 @@
       },
       "version": "0.1.1",
       "source": "https://github.com/cordisx/plugin-pet",
-      "homepage": "https://github.com/cordisx/plugin-pet/releases/tag/v0.1.1",
+      "homepage": "https://github.com/cordisx/plugin-pet#readme",
       "license": "MIT",
       "compatibility": {
         "cordisx": "=0.1.0-beta.2"
@@ -306,7 +384,8 @@
         "composer",
         "avatar",
         "animation"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/cordisx/plugin-pet/8cbff331ef69f2d62874a93732dfff10d92795ae/assets/icon.png"
     }
   ],
   "official": [],
