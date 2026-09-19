@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v3.schema.json",
   "schemaVersion": 3,
-  "generatedAt": "2026-09-19T15:32:59Z",
+  "generatedAt": "2026-09-19T15:41:29Z",
   "trust": {
     "authority": "cordisx.marketplace.codeowners/v1",
     "root": "https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json",
@@ -105,11 +105,11 @@
       "id": "channel",
       "fallbackLocale": "en",
       "name": "Channel",
-      "description": "Channel account, binding, credential, and adapter management for CordisX. Package verification source only; no packaged installer yet.",
+      "description": "Channel account, binding, credential, and adapter management for CordisX. Install the versioned package through the CordisX plugin manager or CLI.",
       "localizations": {
         "zh-CN": {
           "name": "Channel",
-          "description": "为 CordisX 提供渠道账号、绑定、凭据和适配器管理。当前仅提供包验证源码，暂未提供安装包。",
+          "description": "为 CordisX 提供渠道账号、绑定、凭据和适配器管理。通过 CordisX 插件管理器或 CLI 安装指定版本。",
           "authors": [
             "CordisX 团队"
           ],
@@ -121,8 +121,15 @@
           ]
         }
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": "https://github.com/cordisx/plugin-channel",
+      "artifact": {
+        "publisherIdentity": "npm:@cordisx",
+        "packageNamespace": "@cordisx",
+        "packageName": "@cordisx/channel",
+        "downloadUrl": "https://github.com/cordisx/plugin-channel/releases/download/v0.1.1/cordisx-channel-0.1.1.tgz",
+        "integrity": "sha256:c0ba45c33db30fcdb752265248edaf165eaffd1192917fc2242dac5d03ce3dda"
+      },
       "icon": "https://raw.githubusercontent.com/cordisx/plugin-channel/1b6def3a53758e5d2fd93af922d2ed29b2706822/assets/channel.png",
       "homepage": "https://github.com/cordisx/plugin-channel#readme",
       "license": "AGPL-3.0-or-later",
@@ -198,11 +205,11 @@
       "id": "cli-proxy-api",
       "fallbackLocale": "en",
       "name": "CLI Proxy API",
-      "description": "CLIProxyAPI provider sessions, models, turns, and approvals for CordisX. Source installation only; no packaged installer yet.",
+      "description": "CLIProxyAPI provider sessions, models, turns, and approvals for CordisX. Install the versioned package through the CordisX plugin manager or CLI.",
       "localizations": {
         "zh-CN": {
           "name": "CLI Proxy API",
-          "description": "为 CordisX 提供 CLIProxyAPI 的会话、模型、回合和审批能力。当前仅支持源码安装，暂未提供安装包。",
+          "description": "为 CordisX 提供 CLIProxyAPI 的会话、模型、回合和审批能力。通过 CordisX 插件管理器或 CLI 安装指定版本。",
           "authors": [
             "CordisX 团队"
           ],
@@ -214,8 +221,15 @@
           ]
         }
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": "https://github.com/cordisx/plugin-cli-proxy-api",
+      "artifact": {
+        "publisherIdentity": "npm:@cordisx",
+        "packageNamespace": "@cordisx",
+        "packageName": "@cordisx/plugin-cli-proxy-api",
+        "downloadUrl": "https://github.com/cordisx/plugin-cli-proxy-api/releases/download/v0.1.1/cordisx-plugin-cli-proxy-api-0.1.1.tgz",
+        "integrity": "sha256:171d1e650602b026a2ea662b9e241c5ba5babcb7f3dbbc25d3960e8b6c750b94"
+      },
       "icon": "https://raw.githubusercontent.com/cordisx/plugin-cli-proxy-api/12d5daa36dbd5dd565b96d22859afb1d0f3f3e1d/assets/icon.png",
       "homepage": "https://github.com/cordisx/plugin-cli-proxy-api#readme",
       "license": "AGPL-3.0-or-later",

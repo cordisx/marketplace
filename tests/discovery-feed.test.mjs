@@ -24,13 +24,15 @@ test('keeps source-only products without fabricated install metadata', () => {
   }
 })
 
-test('Chatroom uses a versioned owner release URL and an exact digest', () => {
-  const chatroom = feed.plugins.find(plugin => plugin.id === 'chatroom')
-  assert.ok(chatroom?.artifact)
-  assert.ok(chatroom.artifact.downloadUrl.startsWith(`${chatroom.source}/releases/download/v${chatroom.version}/`))
-  assert.match(chatroom.artifact.integrity, /^sha256:[a-f0-9]{64}$/)
-  assert.equal(chatroom.artifact.publisherIdentity, `npm:${chatroom.artifact.packageNamespace}`)
-  assert.ok(chatroom.artifact.packageName.startsWith(`${chatroom.artifact.packageNamespace}/`))
+test('released owner packages use versioned URLs and exact digests', () => {
+  for (const id of ['chatroom', 'channel', 'cli-proxy-api']) {
+    const plugin = feed.plugins.find(plugin => plugin.id === id)
+    assert.ok(plugin?.artifact, id)
+    assert.ok(plugin.artifact.downloadUrl.startsWith(`${plugin.source}/releases/download/v${plugin.version}/`), id)
+    assert.match(plugin.artifact.integrity, /^sha256:[a-f0-9]{64}$/, id)
+    assert.equal(plugin.artifact.publisherIdentity, `npm:${plugin.artifact.packageNamespace}`, id)
+    assert.ok(plugin.artifact.packageName.startsWith(`${plugin.artifact.packageNamespace}/`), id)
+  }
 })
 
 test('labels the Host slot showcase as a non-installable development example', () => {
