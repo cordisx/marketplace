@@ -5,11 +5,13 @@ Public, pull-request-driven discovery catalog for CordisX plugins.
 ## Getting started with an AI assistant
 
 ```text
-Read the CordisX Marketplace guide, configure this source, and help me find and install the plugin I request: https://raw.githubusercontent.com/cordisx/marketplace/main/llms.txt
+Follow this guide to configure the Marketplace and install the plugin I request.
+
+https://raw.githubusercontent.com/cordisx/marketplace/main/llms.txt
 ```
 
 Tell the assistant which plugin you want. The guide reuses existing Host setup
-and links to the documentation Skill for later questions.
+and links to the relevant documentation without a separate Skill setup step.
 [Read the entry](llms.txt) or [use the CLI guide](.agents/docs/install-plugins.md).
 
 ## Catalog
