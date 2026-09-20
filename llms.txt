@@ -9,8 +9,10 @@ the Marketplace repository itself does not execute or install plugins.
 1. If CordisX is not ready, follow [Host adoption](https://raw.githubusercontent.com/cordisx/cordisx/main/llms.txt).
    Reuse setup already completed, including the chosen home and profile.
 2. For source configuration and existing plugins, read [Install from a Marketplace](.agents/docs/install-plugins.md).
-3. For ongoing help, [install the Docs Skill](https://raw.githubusercontent.com/cordisx/docs/main/.agents/docs/install-docs-skill.md)
-   or consult [the Docs task index](https://raw.githubusercontent.com/cordisx/docs/main/skills/index.md).
+3. For ongoing help, use the installed `cordisx` entry when available or consult
+   [the Docs task index](https://raw.githubusercontent.com/cordisx/docs/main/skills/index.md).
+   Startup manages the Host's bundled Skills; source configuration does not
+   require a separate Skill installation.
 4. For publishing a catalog entry instead of installing a plugin, read [Contributing](CONTRIBUTING.md).
 
 Follow only the route relevant to the request. Relative links resolve against
