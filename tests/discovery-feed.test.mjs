@@ -23,7 +23,6 @@ test('replaces Pet discovery with the verified scoped release without changing p
   assert.equal(plugin.compatibility.cordisx, '>=0.1.0-beta.11 <0.2.0')
   assert.deepEqual(plugin.artifact, {
     publisherIdentity: 'npm:@cordisx',
-    packageNamespace: '@cordisx',
     packageName: '@cordisx/plugin-pet',
     downloadUrl: 'https://github.com/cordisx/plugin-pet/releases/download/v0.1.3/cordisx-plugin-pet-0.1.3.tgz',
     integrity: 'sha256:097280dba8cec8206cfabc57a6f4c85b2c36e6732d6c9cd60e4f0adab92afdf4',
@@ -48,9 +47,17 @@ test('released owner packages use versioned URLs and exact digests', () => {
     assert.ok(plugin?.artifact, id)
     assert.ok(plugin.artifact.downloadUrl.startsWith(`${plugin.source}/releases/download/v${plugin.version}/`), id)
     assert.match(plugin.artifact.integrity, /^sha256:[a-f0-9]{64}$/, id)
-    assert.equal(plugin.artifact.publisherIdentity, `npm:${plugin.artifact.packageNamespace}`, id)
-    assert.ok(plugin.artifact.packageName.startsWith(`${plugin.artifact.packageNamespace}/`), id)
+    assert.equal(plugin.artifact.publisherIdentity, 'npm:@cordisx', id)
+    assert.ok(plugin.artifact.packageName.startsWith('@cordisx/'), id)
+    assert.equal(Object.hasOwn(plugin.artifact, 'packageNamespace'), false, id)
   }
+})
+
+test('the canonical feed and every entry use the released Host v8 contract', () => {
+  assert.equal(feed.schemaVersion, 8)
+  for (const plugin of feed.plugins) assert.equal(plugin.schemaVersion, 8, plugin.id)
+  assert.deepEqual(feed.official, [])
+  assert.deepEqual(feed.certifications, [])
 })
 
 test('labels the Host slot showcase as a non-installable development example', () => {

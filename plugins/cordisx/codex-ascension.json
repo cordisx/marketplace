@@ -1,6 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
-  "schemaVersion": 3,
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v8.schema.json",
+  "schemaVersion": 8,
   "id": "codex-ascension",
   "fallbackLocale": "en",
   "name": "Codex Ascension",
@@ -9,15 +9,21 @@
     "zh-CN": {
       "name": "Codex Ascension",
       "description": "为 CordisX 提供戏剧化的推理强度展示和可选会话背景。通过 CordisX 插件管理器或 CLI 安装指定版本。",
-      "authors": ["CordisX 团队"],
-      "keywords": ["推理", "展示", "会话", "背景"]
+      "authors": [
+        "CordisX 团队"
+      ],
+      "keywords": [
+        "推理",
+        "展示",
+        "会话",
+        "背景"
+      ]
     }
   },
   "version": "0.1.1",
   "source": "https://github.com/cordisx/plugin-codex-ascension",
   "artifact": {
     "publisherIdentity": "npm:@cordisx",
-    "packageNamespace": "@cordisx",
     "packageName": "@cordisx/codex-ascension",
     "downloadUrl": "https://github.com/cordisx/plugin-codex-ascension/releases/download/v0.1.1/cordisx-codex-ascension-0.1.1.tgz",
     "integrity": "sha256:b09528c337d3f110df52c45421c66befd0281513d789cd7f58ac997a32692411"
@@ -25,7 +31,19 @@
   "icon": "https://raw.githubusercontent.com/cordisx/plugin-codex-ascension/25f5cf7caafd4b43eb1c6df92972e2a409752760/plugin/src/assets/identity/ascension.png",
   "homepage": "https://github.com/cordisx/plugin-codex-ascension/blob/main/plugin/README.md",
   "license": "MIT",
-  "compatibility": { "cordisx": "=0.1.0-beta.1" },
-  "authors": [{ "name": "CordisX", "url": "https://github.com/cordisx" }],
-  "keywords": ["reasoning", "presentation", "session", "backdrop"]
+  "compatibility": {
+    "cordisx": "=0.1.0-beta.1"
+  },
+  "authors": [
+    {
+      "name": "CordisX",
+      "url": "https://github.com/cordisx"
+    }
+  ],
+  "keywords": [
+    "reasoning",
+    "presentation",
+    "session",
+    "backdrop"
+  ]
 }

@@ -1,5 +1,6 @@
 {
-  "generatedAt": "2026-09-20T06:17:42Z",
+  "schemaVersion": 8,
+  "generatedAt": "2026-09-20T06:54:00Z",
   "trust": {
     "authority": "cordisx.marketplace.codeowners/v1",
     "root": "https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json",
@@ -8,6 +9,7 @@
   },
   "fallbackLocale": "en",
   "name": "CordisX Community Marketplace",
+  "description": "Discover CordisX plugins from community and first-party developers.",
   "localizations": {
     "zh-CN": {
       "name": "CordisX 社区插件商店"

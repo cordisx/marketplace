@@ -1,6 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v3.schema.json",
-  "schemaVersion": 3,
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v8.schema.json",
+  "schemaVersion": 8,
   "id": "cli-proxy-api",
   "fallbackLocale": "en",
   "name": "CLI Proxy API",
@@ -9,15 +9,21 @@
     "zh-CN": {
       "name": "CLI Proxy API",
       "description": "为 CordisX 提供 CLIProxyAPI 的会话、模型、回合和审批能力。通过 CordisX 插件管理器或 CLI 安装指定版本。",
-      "authors": ["CordisX 团队"],
-      "keywords": ["提供商", "会话", "模型", "审批"]
+      "authors": [
+        "CordisX 团队"
+      ],
+      "keywords": [
+        "提供商",
+        "会话",
+        "模型",
+        "审批"
+      ]
     }
   },
   "version": "0.1.1",
   "source": "https://github.com/cordisx/plugin-cli-proxy-api",
   "artifact": {
     "publisherIdentity": "npm:@cordisx",
-    "packageNamespace": "@cordisx",
     "packageName": "@cordisx/plugin-cli-proxy-api",
     "downloadUrl": "https://github.com/cordisx/plugin-cli-proxy-api/releases/download/v0.1.1/cordisx-plugin-cli-proxy-api-0.1.1.tgz",
     "integrity": "sha256:171d1e650602b026a2ea662b9e241c5ba5babcb7f3dbbc25d3960e8b6c750b94"
@@ -25,7 +31,19 @@
   "icon": "https://raw.githubusercontent.com/cordisx/plugin-cli-proxy-api/12d5daa36dbd5dd565b96d22859afb1d0f3f3e1d/assets/icon.png",
   "homepage": "https://github.com/cordisx/plugin-cli-proxy-api#readme",
   "license": "AGPL-3.0-or-later",
-  "compatibility": { "cordisx": "=0.1.0-beta.2" },
-  "authors": [{ "name": "CordisX", "url": "https://github.com/cordisx" }],
-  "keywords": ["provider", "session", "model", "approval"]
+  "compatibility": {
+    "cordisx": "=0.1.0-beta.2"
+  },
+  "authors": [
+    {
+      "name": "CordisX",
+      "url": "https://github.com/cordisx"
+    }
+  ],
+  "keywords": [
+    "provider",
+    "session",
+    "model",
+    "approval"
+  ]
 }
