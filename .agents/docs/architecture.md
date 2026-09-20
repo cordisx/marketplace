@@ -40,6 +40,23 @@ source serialization and tuple uniqueness, validates the generated feed, and
 fails if `marketplace.json` is stale. Network reachability is not a merge-time
 identity guarantee and is not folded into deterministic format validation.
 
+## Package naming and compatibility
+
+Ordinary version-8 artifacts accept valid scoped or unscoped package names.
+`@cordisx/plugin-<slug>` is the development convention for CordisX-maintained
+packages, not an external contribution requirement. A package name is the exact
+archive identity; neither a scope nor optional publisher metadata establishes
+trust. GitHub-distributed archives need not assert an npm publisher identity.
+The [version-8 contract](https://github.com/cordisx/cordisx-protocol/blob/main/.agents/docs/marketplace/README.md)
+owns the package-name and compatibility requirements.
+
+The generator defaults to version 3 and preserves the deployed feed unchanged.
+Version 8 requires explicit `schemaVersion: 8` and `description` in
+`feed.config.json`, together with version-8 plugin entries. Mixed-version feeds
+are rejected. Deploying a version-8 canonical feed requires a compatible Host;
+do not rewrite older contracts, fabricate a namespace, or relabel archive bytes
+to make an unscoped artifact appear compatible with an older consumer.
+
 ## Trust records
 
 The version-3 feed has two independent top-level trust dimensions. Official
