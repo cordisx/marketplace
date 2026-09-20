@@ -41,16 +41,50 @@ function validator(name) {
 
 const validatePluginSchema = validator('plugin')
 const validateFeedSchema = validator('feed')
+const validatePluginSchemaV8 = validator('pluginV8')
+const validateFeedSchemaV8 = validator('feedV8')
 const validateOfficialSchema = validator('official')
 const validateCertificationSchema = validator('certification')
 
+function pluginValidator(value) {
+  return value?.schemaVersion === 8 ? validatePluginSchemaV8 : validatePluginSchema
+}
+
 /** Testable catalog boundary: plugin documents cannot carry trust self-claims. */
 export function validateMarketplacePluginDocument(value) {
-  const valid = validatePluginSchema(value)
+  const validate = pluginValidator(value)
+  const valid = validate(value)
   return Object.freeze({
     valid,
-    errors: Object.freeze((validatePluginSchema.errors ?? []).map(error => Object.freeze({ ...error }))),
+    errors: Object.freeze((validate.errors ?? []).map(error => Object.freeze({ ...error }))),
   })
+}
+
+export function createMarketplaceFeed(config, plugins, official = [], certifications = []) {
+  const version = config.schemaVersion ?? 3
+  if (version !== 3 && version !== 8) throw new Error(`unsupported marketplace feed version: ${version}`)
+  const feed = {
+    $schema:
+      `https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v${version}.schema.json`,
+    schemaVersion: version,
+    generatedAt: config.generatedAt,
+    trust: config.trust,
+    fallbackLocale: config.fallbackLocale,
+    name: config.name,
+    ...(version === 8 ? { description: config.description } : {}),
+    ...(config.localizations === undefined ? {} : { localizations: config.localizations }),
+    homepage: config.homepage,
+    plugins,
+    official,
+    certifications,
+  }
+  const validate = version === 8 ? validateFeedSchemaV8 : validateFeedSchema
+  if (!validate(feed)) {
+    const errors = []
+    appendSchemaErrors(errors, 'marketplace.json', validate)
+    throw new Error(errors.join('\n'))
+  }
+  return feed
 }
 
 export function canonicalSource(value) {
@@ -141,7 +175,9 @@ function sameOfficialIdentity(record, plugin) {
   return record.identity.pluginId === plugin.id
     && record.identity.canonicalSource === plugin.source
     && record.identity.publisherIdentity === plugin.artifact?.publisherIdentity
-    && record.identity.packageNamespace === plugin.artifact?.packageNamespace
+    && (plugin.schemaVersion === 8
+      ? plugin.artifact?.packageName.startsWith(`${record.identity.packageNamespace}/`) === true
+      : record.identity.packageNamespace === plugin.artifact?.packageNamespace)
     && record.identity.packageName === plugin.artifact?.packageName
 }
 
@@ -261,8 +297,9 @@ async function main() {
     const relative = path.relative(root, file)
     const plugin = await readJson(file, errors)
     if (plugin === undefined) continue
-    if (!validatePluginSchema(plugin)) {
-      appendSchemaErrors(errors, relative, validatePluginSchema)
+    const validatePlugin = pluginValidator(plugin)
+    if (!validatePlugin(plugin)) {
+      appendSchemaErrors(errors, relative, validatePlugin)
       continue
     }
     try {
@@ -273,7 +310,7 @@ async function main() {
       errors.push(`${relative}: ${error instanceof Error ? error.message : String(error)}`)
     }
     validatePluginLocalization(plugin, relative, errors)
-    if (plugin.artifact !== undefined) {
+    if (plugin.artifact !== undefined && plugin.schemaVersion === 3) {
       if (!plugin.artifact.packageName.startsWith(`${plugin.artifact.packageNamespace}/`)) {
         errors.push(`${relative}: artifact.packageName must belong to artifact.packageNamespace`)
       }
@@ -326,20 +363,8 @@ async function main() {
   certifications.sort(compareCertification)
   errors.push(...evaluateTrustRecords(plugins, official, certifications, config.generatedAt))
 
-  const feed = {
-    $schema: 'https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v3.schema.json',
-    schemaVersion: 3,
-    generatedAt: config.generatedAt,
-    trust: config.trust,
-    fallbackLocale: config.fallbackLocale,
-    name: config.name,
-    ...(config.localizations === undefined ? {} : { localizations: config.localizations }),
-    homepage: config.homepage,
-    plugins,
-    official,
-    certifications,
-  }
-  if (!validateFeedSchema(feed)) appendSchemaErrors(errors, 'marketplace.json', validateFeedSchema)
+  if (errors.length > 0) throw new Error(errors.join('\n'))
+  const feed = createMarketplaceFeed(config, plugins, official, certifications)
 
   const generated = `${JSON.stringify(feed, null, 2)}\n`
   const outputPath = path.join(root, 'marketplace.json')
