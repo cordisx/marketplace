@@ -4,11 +4,11 @@
   "id": "channel",
   "fallbackLocale": "en",
   "name": "Channel",
-  "description": "Channel account, binding, credential, and adapter management for CordisX. Package verification source only; no packaged installer yet.",
+  "description": "Channel account, binding, credential, and adapter management for CordisX. Install the versioned package through the CordisX plugin manager or CLI.",
   "localizations": {
     "zh-CN": {
       "name": "Channel",
-      "description": "为 CordisX 提供渠道账号、绑定、凭据和适配器管理。当前仅提供包验证源码，暂未提供安装包。",
+      "description": "为 CordisX 提供渠道账号、绑定、凭据和适配器管理。通过 CordisX 插件管理器或 CLI 安装指定版本。",
       "authors": [
         "CordisX 团队"
       ],
@@ -20,8 +20,15 @@
       ]
     }
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "source": "https://github.com/cordisx/plugin-channel",
+  "artifact": {
+    "publisherIdentity": "npm:@cordisx",
+    "packageNamespace": "@cordisx",
+    "packageName": "@cordisx/channel",
+    "downloadUrl": "https://github.com/cordisx/plugin-channel/releases/download/v0.1.1/cordisx-channel-0.1.1.tgz",
+    "integrity": "sha256:c0ba45c33db30fcdb752265248edaf165eaffd1192917fc2242dac5d03ce3dda"
+  },
   "icon": "https://raw.githubusercontent.com/cordisx/plugin-channel/1b6def3a53758e5d2fd93af922d2ed29b2706822/assets/channel.png",
   "homepage": "https://github.com/cordisx/plugin-channel#readme",
   "license": "AGPL-3.0-or-later",

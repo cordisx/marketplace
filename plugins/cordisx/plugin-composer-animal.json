@@ -4,11 +4,11 @@
   "id": "plugin-composer-animal",
   "fallbackLocale": "en",
   "name": "pet",
-  "description": "Interactive Composer companion with pet care and expressive reactions. Current source installation requires the exact Host/SDK revisions in the README; older release archives do not include this revision.",
+  "description": "Interactive Composer companion with pet care and expressive reactions. Version 0.1.2 has a release archive, but its unscoped package name is not supported by Marketplace installation.",
   "localizations": {
     "zh-CN": {
       "name": "pet",
-      "description": "输入框旁的互动宠物，支持养成与表情反馈。当前源码安装需使用 README 指定的精确 Host/SDK 版本；旧版发布包不包含本次更新。",
+      "description": "输入框旁的互动宠物，支持养成与表情反馈。0.1.2 已发布归档，但包名不带 scope，当前不支持通过插件商店安装。",
       "authors": [
         "CordisX 团队"
       ],
@@ -20,7 +20,7 @@
       ]
     }
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "source": "https://github.com/cordisx/plugin-pet",
   "homepage": "https://github.com/cordisx/plugin-pet#readme",
   "license": "MIT",

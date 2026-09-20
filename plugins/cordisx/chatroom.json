@@ -4,17 +4,24 @@
   "id": "chatroom",
   "fallbackLocale": "en",
   "name": "Chatroom",
-  "description": "Room collaboration, Agent membership, message routing, and shared timelines for CordisX. Source installation only; no packaged installer yet.",
+  "description": "Room collaboration, Agent membership, message routing, and shared timelines for CordisX. Install the versioned package through the CordisX plugin manager or CLI.",
   "localizations": {
     "zh-CN": {
       "name": "Chatroom",
-      "description": "为 CordisX 提供房间协作、Agent 成员关系、消息路由和共享时间线。当前仅支持源码安装，暂未提供安装包。",
+      "description": "为 CordisX 提供房间协作、Agent 成员关系、消息路由和共享时间线。通过 CordisX 插件管理器或 CLI 安装指定版本。",
       "authors": ["CordisX 团队"],
       "keywords": ["房间", "协作", "智能体", "时间线"]
     }
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "source": "https://github.com/cordisx/plugin-chatroom",
+  "artifact": {
+    "publisherIdentity": "npm:@cordisx",
+    "packageNamespace": "@cordisx",
+    "packageName": "@cordisx/chatroom",
+    "downloadUrl": "https://github.com/cordisx/plugin-chatroom/releases/download/v0.1.1/cordisx-chatroom-0.1.1.tgz",
+    "integrity": "sha256:b86d0882de1f2a877582fc4ab1aec4619ffdfd26ad9549ecf0ec255c07fabc48"
+  },
   "icon": "https://raw.githubusercontent.com/cordisx/plugin-chatroom/070bc29f651df033975e42bbb2cbd3a44054a60c/assets/chatroom.png",
   "homepage": "https://github.com/cordisx/plugin-chatroom#readme",
   "license": "MIT",

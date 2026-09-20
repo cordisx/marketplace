@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v3.schema.json",
   "schemaVersion": 3,
-  "generatedAt": "2026-09-19T13:56:30Z",
+  "generatedAt": "2026-09-19T15:56:22Z",
   "trust": {
     "authority": "cordisx.marketplace.codeowners/v1",
     "root": "https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json",
@@ -62,11 +62,11 @@
       "id": "agent-trace-showcase",
       "fallbackLocale": "en",
       "name": "Agent Trace",
-      "description": "Read-only Agent and Session event timeline for CordisX. Source preview only; real-App integration verification is still pending.",
+      "description": "Read-only Agent and Session event timeline for CordisX. Installable preview package; real-App integration verification is still pending.",
       "localizations": {
         "zh-CN": {
           "name": "Agent Trace",
-          "description": "CordisX 的只读 Agent 与 Session 事件时间线。当前为源码预览，仍待真实应用集成验证。",
+          "description": "CordisX 的只读 Agent 与 Session 事件时间线。已提供可安装的预览包，仍待真实应用集成验证。",
           "authors": [
             "CordisX 团队"
           ],
@@ -78,8 +78,15 @@
           ]
         }
       },
-      "version": "0.1.0",
+      "version": "0.1.2",
       "source": "https://github.com/cordisx/plugin-agent-trace",
+      "artifact": {
+        "publisherIdentity": "npm:@cordisx",
+        "packageNamespace": "@cordisx",
+        "packageName": "@cordisx/agent-trace-showcase",
+        "downloadUrl": "https://github.com/cordisx/plugin-agent-trace/releases/download/v0.1.2/cordisx-agent-trace-showcase-0.1.2.tgz",
+        "integrity": "sha256:03122ee3f8ecae1170cfd6a0e850f6074edbb7a0eee0b886538d9c16682b52dd"
+      },
       "icon": "https://raw.githubusercontent.com/cordisx/plugin-agent-trace/bf2448dd4f5a80180de768c5cd89a8eedfdb6a2e/assets/agent-trace.png",
       "homepage": "https://github.com/cordisx/plugin-agent-trace#readme",
       "license": "AGPL-3.0-or-later",
@@ -105,11 +112,11 @@
       "id": "channel",
       "fallbackLocale": "en",
       "name": "Channel",
-      "description": "Channel account, binding, credential, and adapter management for CordisX. Package verification source only; no packaged installer yet.",
+      "description": "Channel account, binding, credential, and adapter management for CordisX. Install the versioned package through the CordisX plugin manager or CLI.",
       "localizations": {
         "zh-CN": {
           "name": "Channel",
-          "description": "为 CordisX 提供渠道账号、绑定、凭据和适配器管理。当前仅提供包验证源码，暂未提供安装包。",
+          "description": "为 CordisX 提供渠道账号、绑定、凭据和适配器管理。通过 CordisX 插件管理器或 CLI 安装指定版本。",
           "authors": [
             "CordisX 团队"
           ],
@@ -121,8 +128,15 @@
           ]
         }
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": "https://github.com/cordisx/plugin-channel",
+      "artifact": {
+        "publisherIdentity": "npm:@cordisx",
+        "packageNamespace": "@cordisx",
+        "packageName": "@cordisx/channel",
+        "downloadUrl": "https://github.com/cordisx/plugin-channel/releases/download/v0.1.1/cordisx-channel-0.1.1.tgz",
+        "integrity": "sha256:c0ba45c33db30fcdb752265248edaf165eaffd1192917fc2242dac5d03ce3dda"
+      },
       "icon": "https://raw.githubusercontent.com/cordisx/plugin-channel/1b6def3a53758e5d2fd93af922d2ed29b2706822/assets/channel.png",
       "homepage": "https://github.com/cordisx/plugin-channel#readme",
       "license": "AGPL-3.0-or-later",
@@ -148,11 +162,11 @@
       "id": "chatroom",
       "fallbackLocale": "en",
       "name": "Chatroom",
-      "description": "Room collaboration, Agent membership, message routing, and shared timelines for CordisX. Source installation only; no packaged installer yet.",
+      "description": "Room collaboration, Agent membership, message routing, and shared timelines for CordisX. Install the versioned package through the CordisX plugin manager or CLI.",
       "localizations": {
         "zh-CN": {
           "name": "Chatroom",
-          "description": "为 CordisX 提供房间协作、Agent 成员关系、消息路由和共享时间线。当前仅支持源码安装，暂未提供安装包。",
+          "description": "为 CordisX 提供房间协作、Agent 成员关系、消息路由和共享时间线。通过 CordisX 插件管理器或 CLI 安装指定版本。",
           "authors": [
             "CordisX 团队"
           ],
@@ -164,8 +178,15 @@
           ]
         }
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": "https://github.com/cordisx/plugin-chatroom",
+      "artifact": {
+        "publisherIdentity": "npm:@cordisx",
+        "packageNamespace": "@cordisx",
+        "packageName": "@cordisx/chatroom",
+        "downloadUrl": "https://github.com/cordisx/plugin-chatroom/releases/download/v0.1.1/cordisx-chatroom-0.1.1.tgz",
+        "integrity": "sha256:b86d0882de1f2a877582fc4ab1aec4619ffdfd26ad9549ecf0ec255c07fabc48"
+      },
       "icon": "https://raw.githubusercontent.com/cordisx/plugin-chatroom/070bc29f651df033975e42bbb2cbd3a44054a60c/assets/chatroom.png",
       "homepage": "https://github.com/cordisx/plugin-chatroom#readme",
       "license": "MIT",
@@ -191,11 +212,11 @@
       "id": "cli-proxy-api",
       "fallbackLocale": "en",
       "name": "CLI Proxy API",
-      "description": "CLIProxyAPI provider sessions, models, turns, and approvals for CordisX. Source installation only; no packaged installer yet.",
+      "description": "CLIProxyAPI provider sessions, models, turns, and approvals for CordisX. Install the versioned package through the CordisX plugin manager or CLI.",
       "localizations": {
         "zh-CN": {
           "name": "CLI Proxy API",
-          "description": "为 CordisX 提供 CLIProxyAPI 的会话、模型、回合和审批能力。当前仅支持源码安装，暂未提供安装包。",
+          "description": "为 CordisX 提供 CLIProxyAPI 的会话、模型、回合和审批能力。通过 CordisX 插件管理器或 CLI 安装指定版本。",
           "authors": [
             "CordisX 团队"
           ],
@@ -207,8 +228,15 @@
           ]
         }
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": "https://github.com/cordisx/plugin-cli-proxy-api",
+      "artifact": {
+        "publisherIdentity": "npm:@cordisx",
+        "packageNamespace": "@cordisx",
+        "packageName": "@cordisx/plugin-cli-proxy-api",
+        "downloadUrl": "https://github.com/cordisx/plugin-cli-proxy-api/releases/download/v0.1.1/cordisx-plugin-cli-proxy-api-0.1.1.tgz",
+        "integrity": "sha256:171d1e650602b026a2ea662b9e241c5ba5babcb7f3dbbc25d3960e8b6c750b94"
+      },
       "icon": "https://raw.githubusercontent.com/cordisx/plugin-cli-proxy-api/12d5daa36dbd5dd565b96d22859afb1d0f3f3e1d/assets/icon.png",
       "homepage": "https://github.com/cordisx/plugin-cli-proxy-api#readme",
       "license": "AGPL-3.0-or-later",
@@ -234,11 +262,11 @@
       "id": "codex-ascension",
       "fallbackLocale": "en",
       "name": "Codex Ascension",
-      "description": "A theatrical reasoning-intensity presentation and optional session backdrop for CordisX. Source installation only; no packaged installer yet.",
+      "description": "A theatrical reasoning-intensity presentation and optional session backdrop for CordisX. Install the versioned package through the CordisX plugin manager or CLI.",
       "localizations": {
         "zh-CN": {
           "name": "Codex Ascension",
-          "description": "为 CordisX 提供戏剧化的推理强度展示和可选会话背景。当前仅支持源码安装，暂未提供安装包。",
+          "description": "为 CordisX 提供戏剧化的推理强度展示和可选会话背景。通过 CordisX 插件管理器或 CLI 安装指定版本。",
           "authors": [
             "CordisX 团队"
           ],
@@ -250,8 +278,15 @@
           ]
         }
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": "https://github.com/cordisx/plugin-codex-ascension",
+      "artifact": {
+        "publisherIdentity": "npm:@cordisx",
+        "packageNamespace": "@cordisx",
+        "packageName": "@cordisx/codex-ascension",
+        "downloadUrl": "https://github.com/cordisx/plugin-codex-ascension/releases/download/v0.1.1/cordisx-codex-ascension-0.1.1.tgz",
+        "integrity": "sha256:b09528c337d3f110df52c45421c66befd0281513d789cd7f58ac997a32692411"
+      },
       "icon": "https://raw.githubusercontent.com/cordisx/plugin-codex-ascension/25f5cf7caafd4b43eb1c6df92972e2a409752760/plugin/src/assets/identity/ascension.png",
       "homepage": "https://github.com/cordisx/plugin-codex-ascension/blob/main/plugin/README.md",
       "license": "MIT",
@@ -349,11 +384,11 @@
       "id": "plugin-composer-animal",
       "fallbackLocale": "en",
       "name": "pet",
-      "description": "Interactive Composer companion with pet care and expressive reactions. Current source installation requires the exact Host/SDK revisions in the README; older release archives do not include this revision.",
+      "description": "Interactive Composer companion with pet care and expressive reactions. Version 0.1.2 has a release archive, but its unscoped package name is not supported by Marketplace installation.",
       "localizations": {
         "zh-CN": {
           "name": "pet",
-          "description": "输入框旁的互动宠物，支持养成与表情反馈。当前源码安装需使用 README 指定的精确 Host/SDK 版本；旧版发布包不包含本次更新。",
+          "description": "输入框旁的互动宠物，支持养成与表情反馈。0.1.2 已发布归档，但包名不带 scope，当前不支持通过插件商店安装。",
           "authors": [
             "CordisX 团队"
           ],
@@ -365,7 +400,7 @@
           ]
         }
       },
-      "version": "0.1.1",
+      "version": "0.1.2",
       "source": "https://github.com/cordisx/plugin-pet",
       "homepage": "https://github.com/cordisx/plugin-pet#readme",
       "license": "MIT",

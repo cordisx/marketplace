@@ -14,13 +14,21 @@ test('publishes the four reviewed discovery entries alongside newer catalog addi
   ])
 })
 
-test('keeps product listings discovery-only without fabricated install metadata', () => {
-  const productIds = new Set(['agent-trace-showcase', 'chatroom', 'codex-ascension'])
-  const products = feed.plugins.filter(plugin => productIds.has(plugin.id))
-  assert.equal(products.length, 3)
-  for (const plugin of products) {
-    assert.equal(Object.hasOwn(plugin, 'artifact'), false, plugin.id)
-    assert.equal(Object.hasOwn(plugin, 'manifest'), false, plugin.id)
+test('does not fabricate a scoped artifact identity for the unscoped Pet release', () => {
+  const plugin = feed.plugins.find(plugin => plugin.id === 'plugin-composer-animal')
+  assert.ok(plugin)
+  assert.equal(Object.hasOwn(plugin, 'artifact'), false)
+  assert.equal(Object.hasOwn(plugin, 'manifest'), false)
+})
+
+test('released owner packages use versioned URLs and exact digests', () => {
+  for (const id of ['chatroom', 'channel', 'cli-proxy-api', 'agent-trace-showcase', 'codex-ascension']) {
+    const plugin = feed.plugins.find(plugin => plugin.id === id)
+    assert.ok(plugin?.artifact, id)
+    assert.ok(plugin.artifact.downloadUrl.startsWith(`${plugin.source}/releases/download/v${plugin.version}/`), id)
+    assert.match(plugin.artifact.integrity, /^sha256:[a-f0-9]{64}$/, id)
+    assert.equal(plugin.artifact.publisherIdentity, `npm:${plugin.artifact.packageNamespace}`, id)
+    assert.ok(plugin.artifact.packageName.startsWith(`${plugin.artifact.packageNamespace}/`), id)
   }
 })
 
