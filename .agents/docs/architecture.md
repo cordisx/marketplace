@@ -50,8 +50,8 @@ trust. GitHub-distributed archives need not assert an npm publisher identity.
 The [version-8 contract](https://github.com/cordisx/cordisx-protocol/blob/main/.agents/docs/marketplace/README.md)
 owns the package-name and compatibility requirements.
 
-The generator defaults to version 3 and preserves the deployed feed unchanged.
-Version 8 requires explicit `schemaVersion: 8` and `description` in
+The canonical feed uses version 8, supported by CordisX 0.1.0-beta.12 and later.
+The generator retains version 3 as its legacy default. Version 8 uses explicit `schemaVersion: 8` and `description` in
 `feed.config.json`, together with version-8 plugin entries. Mixed-version feeds
 are rejected. Deploying a version-8 canonical feed requires a compatible Host;
 do not rewrite older contracts, fabricate a namespace, or relabel archive bytes
@@ -59,7 +59,7 @@ to make an unscoped artifact appear compatible with an older consumer.
 
 ## Trust records
 
-The version-3 feed has two independent top-level trust dimensions. Official
+The feed has two independent top-level trust dimensions. Official
 publisher records bind stable plugin id, canonical CordisX source, trusted npm
 publisher identity, package namespace, and exact package name; they may
 continue across versions only while those values stay unchanged. Certification

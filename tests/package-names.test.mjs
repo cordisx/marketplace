@@ -4,8 +4,6 @@ import test from 'node:test'
 import { createMarketplaceFeed, evaluateTrustRecords, validateMarketplacePluginDocument } from '../scripts/catalog.mjs'
 
 const config = JSON.parse(await readFile(new URL('../feed.config.json', import.meta.url), 'utf8'))
-const legacyFeedText = await readFile(new URL('../marketplace.json', import.meta.url), 'utf8')
-const legacyFeed = JSON.parse(legacyFeedText)
 const plugin = {
   $schema: 'https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-plugin.v8.schema.json',
   schemaVersion: 8,
@@ -142,15 +140,40 @@ test('unscoped v8 artifacts can match independent certification only for the exa
   }
 })
 
-test('the default feed stays byte-compatible with the already published v3 catalog', () => {
-  const feed = createMarketplaceFeed(config, legacyFeed.plugins, legacyFeed.official, legacyFeed.certifications)
-  assert.equal(`${JSON.stringify(feed, null, 2)}\n`, legacyFeedText)
-  assert.throws(() => createMarketplaceFeed(config, [plugin]), /marketplace.json/)
+test('legacy default generation remains v3 and rejects mixed-version entries', () => {
+  const legacyConfig = { ...config }
+  delete legacyConfig.schemaVersion
+  const legacyPlugin = {
+    ...plugin,
+    $schema: plugin.$schema.replace('.v8.', '.v3.'),
+    schemaVersion: 3,
+    artifact: {
+      ...plugin.artifact,
+      packageName: '@independent/notes',
+      packageNamespace: '@independent',
+      publisherIdentity: 'npm:@independent',
+    },
+  }
+  const feed = createMarketplaceFeed(legacyConfig, [legacyPlugin])
+  assert.deepEqual(feed, {
+    $schema: 'https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v3.schema.json',
+    schemaVersion: 3,
+    generatedAt: config.generatedAt,
+    trust: config.trust,
+    fallbackLocale: config.fallbackLocale,
+    name: config.name,
+    localizations: config.localizations,
+    homepage: config.homepage,
+    plugins: [legacyPlugin],
+    official: [],
+    certifications: [],
+  })
+  assert.throws(() => createMarketplaceFeed(legacyConfig, [plugin]), /marketplace.json/)
   assert.throws(
     () =>
       createMarketplaceFeed({ ...config, schemaVersion: 8, description: 'Community plugins.' }, [
         plugin,
-        legacyFeed.plugins[0],
+        legacyPlugin,
       ]),
     /marketplace.json/,
   )

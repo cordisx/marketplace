@@ -11,6 +11,6 @@ Read `.agents/rules/README.md` before changing this repository.
 - CordisX-maintained plugin packages should use the `@cordisx/plugin-<slug>`
   naming convention. It is not an admission requirement for external plugins:
   the version-8 artifact contract accepts independent scopes and unscoped names.
-- Keep the existing version-3 canonical feed until a compatible Host is released.
-  A version-8 rollout requires an explicit feed configuration and compatible
-  version-8 entries; do not invent scope or publisher metadata for a downgrade.
+- The canonical feed uses version 8 and requires CordisX 0.1.0-beta.12 or later.
+  Keep version-8 entries consistent with the explicit feed configuration;
+  do not invent scope or publisher metadata for a downgrade.
