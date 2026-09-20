@@ -14,15 +14,36 @@ test('publishes the four reviewed discovery entries alongside newer catalog addi
   ])
 })
 
-test('does not fabricate a scoped artifact identity for the unscoped Pet release', () => {
-  const plugin = feed.plugins.find(plugin => plugin.id === 'plugin-composer-animal')
-  assert.ok(plugin)
-  assert.equal(Object.hasOwn(plugin, 'artifact'), false)
+test('replaces Pet discovery with the verified scoped release without changing plugin identity', () => {
+  const entries = feed.plugins.filter(plugin => plugin.id === 'plugin-composer-animal')
+  assert.equal(entries.length, 1)
+  const [plugin] = entries
+  assert.equal(plugin.source, 'https://github.com/cordisx/plugin-pet')
+  assert.equal(plugin.version, '0.1.3')
+  assert.equal(plugin.compatibility.cordisx, '>=0.1.0-beta.11 <0.2.0')
+  assert.deepEqual(plugin.artifact, {
+    publisherIdentity: 'npm:@cordisx',
+    packageNamespace: '@cordisx',
+    packageName: '@cordisx/plugin-pet',
+    downloadUrl: 'https://github.com/cordisx/plugin-pet/releases/download/v0.1.3/cordisx-plugin-pet-0.1.3.tgz',
+    integrity: 'sha256:097280dba8cec8206cfabc57a6f4c85b2c36e6732d6c9cd60e4f0adab92afdf4',
+  })
   assert.equal(Object.hasOwn(plugin, 'manifest'), false)
+  assert.equal(Object.hasOwn(plugin, 'official'), false)
+  assert.equal(Object.hasOwn(plugin, 'certified'), false)
 })
 
 test('released owner packages use versioned URLs and exact digests', () => {
-  for (const id of ['chatroom', 'channel', 'cli-proxy-api', 'agent-trace-showcase', 'codex-ascension']) {
+  for (
+    const id of [
+      'chatroom',
+      'channel',
+      'cli-proxy-api',
+      'agent-trace-showcase',
+      'codex-ascension',
+      'plugin-composer-animal',
+    ]
+  ) {
     const plugin = feed.plugins.find(plugin => plugin.id === id)
     assert.ok(plugin?.artifact, id)
     assert.ok(plugin.artifact.downloadUrl.startsWith(`${plugin.source}/releases/download/v${plugin.version}/`), id)
