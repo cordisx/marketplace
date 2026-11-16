@@ -20,19 +20,19 @@
       ]
     }
   },
-  "version": "0.1.1",
+  "version": "0.1.3",
   "source": "https://github.com/cordisx/plugin-channel",
   "artifact": {
     "publisherIdentity": "npm:@cordisx",
     "packageName": "@cordisx/channel",
-    "downloadUrl": "https://github.com/cordisx/plugin-channel/releases/download/v0.1.1/cordisx-channel-0.1.1.tgz",
-    "integrity": "sha256:c0ba45c33db30fcdb752265248edaf165eaffd1192917fc2242dac5d03ce3dda"
+    "downloadUrl": "https://github.com/cordisx/plugin-channel/releases/download/v0.1.3/cordisx-channel-0.1.3.tgz",
+    "integrity": "sha256:c0e4d191676a3c9e7d33d295e253577b59c123e00fd619bd24202a37688634b7"
   },
   "icon": "https://raw.githubusercontent.com/cordisx/plugin-channel/1b6def3a53758e5d2fd93af922d2ed29b2706822/assets/channel.png",
   "homepage": "https://github.com/cordisx/plugin-channel#readme",
   "license": "AGPL-3.0-or-later",
   "compatibility": {
-    "cordisx": "=0.1.0-beta.2"
+    "cordisx": ">=0.1.0-beta.66 <0.2.0"
   },
   "authors": [
     {
