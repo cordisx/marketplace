@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-official.v1.schema.json",
+  "schemaVersion": 1,
+  "designation": "cordisx-official",
+  "identity": {
+    "pluginId": "channel",
+    "canonicalSource": "https://github.com/cordisx/plugin-channel",
+    "publisherIdentity": "npm:@cordisx",
+    "packageNamespace": "@cordisx",
+    "packageName": "@cordisx/channel"
+  },
+  "verificationPolicy": {
+    "id": "cordisx-official-publisher",
+    "version": "1.0.0"
+  },
+  "verifiedAt": "2026-11-18T04:29:59Z",
+  "reviewer": {
+    "authority": "cordisx.marketplace.codeowners/v1",
+    "evidenceRef": "https://github.com/cordisx/marketplace/pull/21"
+  },
+  "status": "active",
+  "label": {
+    "key": "marketplace.channel.official.label",
+    "fallback": "Official"
+  },
+  "description": {
+    "key": "marketplace.channel.official.description",
+    "fallback": "Created and maintained by CordisX."
+  }
+}

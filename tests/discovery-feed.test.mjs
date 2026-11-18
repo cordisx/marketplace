@@ -47,8 +47,7 @@ test('released owner packages use versioned URLs and exact digests', () => {
     assert.ok(plugin?.artifact, id)
     assert.ok(plugin.artifact.downloadUrl.startsWith(`${plugin.source}/releases/download/v${plugin.version}/`), id)
     assert.match(plugin.artifact.integrity, /^sha256:[a-f0-9]{64}$/, id)
-    if (id === 'channel') assert.equal(Object.hasOwn(plugin.artifact, 'publisherIdentity'), false, id)
-    else assert.equal(plugin.artifact.publisherIdentity, 'npm:@cordisx', id)
+    assert.equal(plugin.artifact.publisherIdentity, 'npm:@cordisx', id)
     assert.ok(plugin.artifact.packageName.startsWith('@cordisx/'), id)
     assert.equal(Object.hasOwn(plugin.artifact, 'packageNamespace'), false, id)
   }
@@ -57,8 +56,14 @@ test('released owner packages use versioned URLs and exact digests', () => {
 test('the canonical feed and every entry use the released Host v8 contract', () => {
   assert.equal(feed.schemaVersion, 8)
   for (const plugin of feed.plugins) assert.equal(plugin.schemaVersion, 8, plugin.id)
-  assert.deepEqual(feed.official, [])
-  assert.deepEqual(feed.certifications, [])
+  const channel = feed.plugins.find(plugin => plugin.id === 'channel')
+  assert.deepEqual(feed.official.map(record => record.identity.pluginId), ['channel'])
+  assert.deepEqual(feed.certifications.map(record => record.identity), [{
+    pluginId: channel.id,
+    version: channel.version,
+    canonicalSource: channel.source,
+    integrity: channel.artifact.integrity,
+  }])
 })
 
 test('labels the Host slot showcase as a non-installable development example', () => {
