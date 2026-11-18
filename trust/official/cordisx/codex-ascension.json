@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-official.v1.schema.json",
+  "schemaVersion": 1,
+  "designation": "cordisx-official",
+  "identity": {
+    "pluginId": "codex-ascension",
+    "canonicalSource": "https://github.com/cordisx/plugin-codex-ascension",
+    "publisherIdentity": "npm:@cordisx",
+    "packageNamespace": "@cordisx",
+    "packageName": "@cordisx/codex-ascension"
+  },
+  "verificationPolicy": {
+    "id": "cordisx-official-publisher",
+    "version": "1.0.0"
+  },
+  "verifiedAt": "2026-11-18T04:39:29Z",
+  "reviewer": {
+    "authority": "cordisx.marketplace.codeowners/v1",
+    "evidenceRef": "https://github.com/cordisx/marketplace/pull/22"
+  },
+  "status": "active",
+  "label": {
+    "key": "marketplace.codex-ascension.official.label",
+    "fallback": "Official"
+  },
+  "description": {
+    "key": "marketplace.codex-ascension.official.description",
+    "fallback": "Created and maintained by CordisX."
+  }
+}

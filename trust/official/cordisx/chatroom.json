@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-official.v1.schema.json",
+  "schemaVersion": 1,
+  "designation": "cordisx-official",
+  "identity": {
+    "pluginId": "chatroom",
+    "canonicalSource": "https://github.com/cordisx/plugin-chatroom",
+    "publisherIdentity": "npm:@cordisx",
+    "packageNamespace": "@cordisx",
+    "packageName": "@cordisx/chatroom"
+  },
+  "verificationPolicy": {
+    "id": "cordisx-official-publisher",
+    "version": "1.0.0"
+  },
+  "verifiedAt": "2026-11-18T04:39:29Z",
+  "reviewer": {
+    "authority": "cordisx.marketplace.codeowners/v1",
+    "evidenceRef": "https://github.com/cordisx/marketplace/pull/22"
+  },
+  "status": "active",
+  "label": {
+    "key": "marketplace.chatroom.official.label",
+    "fallback": "Official"
+  },
+  "description": {
+    "key": "marketplace.chatroom.official.description",
+    "fallback": "Created and maintained by CordisX."
+  }
+}

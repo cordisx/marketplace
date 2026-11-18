@@ -56,14 +56,25 @@ test('released owner packages use versioned URLs and exact digests', () => {
 test('the canonical feed and every entry use the released Host v8 contract', () => {
   assert.equal(feed.schemaVersion, 8)
   for (const plugin of feed.plugins) assert.equal(plugin.schemaVersion, 8, plugin.id)
-  const channel = feed.plugins.find(plugin => plugin.id === 'channel')
-  assert.deepEqual(feed.official.map(record => record.identity.pluginId), ['channel'])
-  assert.deepEqual(feed.certifications.map(record => record.identity), [{
-    pluginId: channel.id,
-    version: channel.version,
-    canonicalSource: channel.source,
-    integrity: channel.artifact.integrity,
-  }])
+  const reviewedIds = [
+    'agent-trace-showcase',
+    'channel',
+    'chatroom',
+    'cli-proxy-api',
+    'codex-ascension',
+    'plugin-composer-animal',
+  ]
+  assert.deepEqual(feed.official.map(record => record.identity.pluginId).sort(), reviewedIds)
+  assert.deepEqual(feed.certifications.map(record => record.identity.pluginId).sort(), reviewedIds)
+  for (const record of feed.certifications) {
+    const plugin = feed.plugins.find(plugin => plugin.id === record.identity.pluginId)
+    assert.deepEqual(record.identity, {
+      pluginId: plugin.id,
+      version: plugin.version,
+      canonicalSource: plugin.source,
+      integrity: plugin.artifact.integrity,
+    })
+  }
 })
 
 test('labels the Host slot showcase as a non-installable development example', () => {
