@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-certification.v1.schema.json",
+  "schemaVersion": 1,
+  "level": "cordisx-certified",
+  "identity": {
+    "pluginId": "cli-proxy-api",
+    "version": "0.1.1",
+    "canonicalSource": "https://github.com/cordisx/plugin-cli-proxy-api",
+    "integrity": "sha256:171d1e650602b026a2ea662b9e241c5ba5babcb7f3dbbc25d3960e8b6c750b94"
+  },
+  "reviewPolicy": {
+    "id": "cordisx-marketplace-review",
+    "version": "1.0.0"
+  },
+  "reviewedAt": "2026-11-18T04:39:29Z",
+  "expiresAt": "2027-11-18T04:39:29Z",
+  "reviewer": {
+    "authority": "cordisx.marketplace.codeowners/v1",
+    "evidenceRef": "https://github.com/cordisx/marketplace/pull/22"
+  },
+  "status": "active",
+  "label": {
+    "key": "marketplace.cli-proxy-api.certified.label",
+    "fallback": "CordisX Certified"
+  },
+  "description": {
+    "key": "marketplace.cli-proxy-api.certified.description",
+    "fallback": "CLI Proxy API 0.1.1 artifact reviewed under policy 1.0.0."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-certification.v1.schema.json",
+  "schemaVersion": 1,
+  "level": "cordisx-certified",
+  "identity": {
+    "pluginId": "chatroom",
+    "version": "0.1.1",
+    "canonicalSource": "https://github.com/cordisx/plugin-chatroom",
+    "integrity": "sha256:b86d0882de1f2a877582fc4ab1aec4619ffdfd26ad9549ecf0ec255c07fabc48"
+  },
+  "reviewPolicy": {
+    "id": "cordisx-marketplace-review",
+    "version": "1.0.0"
+  },
+  "reviewedAt": "2026-11-18T04:39:29Z",
+  "expiresAt": "2027-11-18T04:39:29Z",
+  "reviewer": {
+    "authority": "cordisx.marketplace.codeowners/v1",
+    "evidenceRef": "https://github.com/cordisx/marketplace/pull/22"
+  },
+  "status": "active",
+  "label": {
+    "key": "marketplace.chatroom.certified.label",
+    "fallback": "CordisX Certified"
+  },
+  "description": {
+    "key": "marketplace.chatroom.certified.description",
+    "fallback": "Chatroom 0.1.1 artifact reviewed under policy 1.0.0."
+  }
+}

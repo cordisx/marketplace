@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-certification.v1.schema.json",
+  "schemaVersion": 1,
+  "level": "cordisx-certified",
+  "identity": {
+    "pluginId": "codex-ascension",
+    "version": "0.1.1",
+    "canonicalSource": "https://github.com/cordisx/plugin-codex-ascension",
+    "integrity": "sha256:b09528c337d3f110df52c45421c66befd0281513d789cd7f58ac997a32692411"
+  },
+  "reviewPolicy": {
+    "id": "cordisx-marketplace-review",
+    "version": "1.0.0"
+  },
+  "reviewedAt": "2026-11-18T04:39:29Z",
+  "expiresAt": "2027-11-18T04:39:29Z",
+  "reviewer": {
+    "authority": "cordisx.marketplace.codeowners/v1",
+    "evidenceRef": "https://github.com/cordisx/marketplace/pull/22"
+  },
+  "status": "active",
+  "label": {
+    "key": "marketplace.codex-ascension.certified.label",
+    "fallback": "CordisX Certified"
+  },
+  "description": {
+    "key": "marketplace.codex-ascension.certified.description",
+    "fallback": "Codex Ascension 0.1.1 artifact reviewed under policy 1.0.0."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-certification.v1.schema.json",
+  "schemaVersion": 1,
+  "level": "cordisx-certified",
+  "identity": {
+    "pluginId": "agent-trace-showcase",
+    "version": "0.1.2",
+    "canonicalSource": "https://github.com/cordisx/plugin-agent-trace",
+    "integrity": "sha256:03122ee3f8ecae1170cfd6a0e850f6074edbb7a0eee0b886538d9c16682b52dd"
+  },
+  "reviewPolicy": {
+    "id": "cordisx-marketplace-review",
+    "version": "1.0.0"
+  },
+  "reviewedAt": "2026-11-18T04:39:29Z",
+  "expiresAt": "2027-11-18T04:39:29Z",
+  "reviewer": {
+    "authority": "cordisx.marketplace.codeowners/v1",
+    "evidenceRef": "https://github.com/cordisx/marketplace/pull/22"
+  },
+  "status": "active",
+  "label": {
+    "key": "marketplace.agent-trace-showcase.certified.label",
+    "fallback": "CordisX Certified"
+  },
+  "description": {
+    "key": "marketplace.agent-trace-showcase.certified.description",
+    "fallback": "Agent Trace 0.1.2 artifact reviewed under policy 1.0.0."
+  }
+}
