@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v8.schema.json",
   "schemaVersion": 8,
-  "generatedAt": "2026-09-20T06:54:00Z",
+  "generatedAt": "2026-11-18T04:29:59Z",
   "trust": {
     "authority": "cordisx.marketplace.codeowners/v1",
     "root": "https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json",
@@ -425,6 +425,68 @@
       "icon": "https://raw.githubusercontent.com/cordisx/plugin-pet/8cbff331ef69f2d62874a93732dfff10d92795ae/assets/icon.png"
     }
   ],
-  "official": [],
-  "certifications": []
+  "official": [
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-official.v1.schema.json",
+      "schemaVersion": 1,
+      "designation": "cordisx-official",
+      "identity": {
+        "pluginId": "channel",
+        "canonicalSource": "https://github.com/cordisx/plugin-channel",
+        "publisherIdentity": "npm:@cordisx",
+        "packageNamespace": "@cordisx",
+        "packageName": "@cordisx/channel"
+      },
+      "verificationPolicy": {
+        "id": "cordisx-official-publisher",
+        "version": "1.0.0"
+      },
+      "verifiedAt": "2026-11-18T04:29:59Z",
+      "reviewer": {
+        "authority": "cordisx.marketplace.codeowners/v1",
+        "evidenceRef": "https://github.com/cordisx/marketplace/pull/21"
+      },
+      "status": "active",
+      "label": {
+        "key": "marketplace.channel.official.label",
+        "fallback": "Official"
+      },
+      "description": {
+        "key": "marketplace.channel.official.description",
+        "fallback": "Created and maintained by CordisX."
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-certification.v1.schema.json",
+      "schemaVersion": 1,
+      "level": "cordisx-certified",
+      "identity": {
+        "pluginId": "channel",
+        "version": "0.1.5",
+        "canonicalSource": "https://github.com/cordisx/plugin-channel",
+        "integrity": "sha256:cc0a1fecd2b1b0f7a14ba68f121ce3d7ff85bc2cfe912d3d1c342640ae6d21b9"
+      },
+      "reviewPolicy": {
+        "id": "cordisx-marketplace-review",
+        "version": "1.0.0"
+      },
+      "reviewedAt": "2026-11-18T04:29:59Z",
+      "expiresAt": "2027-11-18T04:29:59Z",
+      "reviewer": {
+        "authority": "cordisx.marketplace.codeowners/v1",
+        "evidenceRef": "https://github.com/cordisx/marketplace/pull/21"
+      },
+      "status": "active",
+      "label": {
+        "key": "marketplace.channel.certified.label",
+        "fallback": "CordisX Certified"
+      },
+      "description": {
+        "key": "marketplace.channel.certified.description",
+        "fallback": "Channel 0.1.5 artifact reviewed under policy 1.0.0."
+      }
+    }
+  ]
 }

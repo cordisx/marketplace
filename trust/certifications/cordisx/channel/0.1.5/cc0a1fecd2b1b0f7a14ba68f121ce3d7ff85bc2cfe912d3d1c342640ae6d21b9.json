@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-certification.v1.schema.json",
+  "schemaVersion": 1,
+  "level": "cordisx-certified",
+  "identity": {
+    "pluginId": "channel",
+    "version": "0.1.5",
+    "canonicalSource": "https://github.com/cordisx/plugin-channel",
+    "integrity": "sha256:cc0a1fecd2b1b0f7a14ba68f121ce3d7ff85bc2cfe912d3d1c342640ae6d21b9"
+  },
+  "reviewPolicy": {
+    "id": "cordisx-marketplace-review",
+    "version": "1.0.0"
+  },
+  "reviewedAt": "2026-11-18T04:29:59Z",
+  "expiresAt": "2027-11-18T04:29:59Z",
+  "reviewer": {
+    "authority": "cordisx.marketplace.codeowners/v1",
+    "evidenceRef": "https://github.com/cordisx/marketplace/pull/21"
+  },
+  "status": "active",
+  "label": {
+    "key": "marketplace.channel.certified.label",
+    "fallback": "CordisX Certified"
+  },
+  "description": {
+    "key": "marketplace.channel.certified.description",
+    "fallback": "Channel 0.1.5 artifact reviewed under policy 1.0.0."
+  }
+}
