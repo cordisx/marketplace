@@ -188,6 +188,31 @@ function sameCertificationIdentity(record, plugin) {
     && record.identity.integrity === plugin.artifact?.integrity
 }
 
+// Only designated owner-maintained entries require explicit trust decisions.
+// Source-only entries remain discovery-only until a real artifact is published.
+export function evaluateRequiredTrust(plugins, official, certifications, required) {
+  const errors = []
+  const seen = new Set()
+  for (const identity of required) {
+    const key = `${identity.source}\u0000${identity.id}`
+    if (seen.has(key)) errors.push(`duplicate required trust identity: ${identity.id}`)
+    seen.add(key)
+    const plugin = plugins.find(item => item.source === identity.source && item.id === identity.id)
+    if (plugin === undefined) {
+      errors.push(`required trust identity missing from catalog: ${identity.id}`)
+      continue
+    }
+    if (plugin.artifact === undefined) continue
+    if (!official.some(record => sameOfficialIdentity(record, plugin))) {
+      errors.push(`missing exact Official decision: ${identity.id}`)
+    }
+    if (!certifications.some(record => sameCertificationIdentity(record, plugin))) {
+      errors.push(`missing exact Certified decision: ${identity.id}@${plugin.version}`)
+    }
+  }
+  return errors
+}
+
 export function evaluateTrustRecords(plugins, official, certifications, evaluatedAtValue) {
   const errors = []
   const evaluatedAt = instant(evaluatedAtValue, 'generatedAt', errors)
@@ -362,6 +387,15 @@ async function main() {
   official.sort(compareOfficial)
   certifications.sort(compareCertification)
   errors.push(...evaluateTrustRecords(plugins, official, certifications, config.generatedAt))
+  const required = await readJson(path.join(root, 'trust/required-decisions.json'), errors)
+  if (
+    !Array.isArray(required)
+    || required.some(item =>
+      item === null || typeof item !== 'object' || Object.keys(item).sort().join(',') !== 'id,source'
+      || typeof item.id !== 'string' || typeof item.source !== 'string'
+    )
+  ) errors.push('trust/required-decisions.json must be an array of source/id objects')
+  else errors.push(...evaluateRequiredTrust(plugins, official, certifications, required))
 
   if (errors.length > 0) throw new Error(errors.join('\n'))
   const feed = createMarketplaceFeed(config, plugins, official, certifications)

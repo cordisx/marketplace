@@ -1,0 +1,38 @@
+[
+  {
+    "source": "https://github.com/cordisx/cordisx",
+    "id": "slot-showcase"
+  },
+  {
+    "source": "https://github.com/cordisx/plugin-agent-trace",
+    "id": "agent-trace-showcase"
+  },
+  {
+    "source": "https://github.com/cordisx/plugin-channel",
+    "id": "channel"
+  },
+  {
+    "source": "https://github.com/cordisx/plugin-chatroom",
+    "id": "chatroom"
+  },
+  {
+    "source": "https://github.com/cordisx/plugin-cli-proxy-api",
+    "id": "cli-proxy-api"
+  },
+  {
+    "source": "https://github.com/cordisx/plugin-codex-ascension",
+    "id": "codex-ascension"
+  },
+  {
+    "source": "https://github.com/cordisx/plugin-economy",
+    "id": "wallet"
+  },
+  {
+    "source": "https://github.com/cordisx/plugin-game-room",
+    "id": "game-room"
+  },
+  {
+    "source": "https://github.com/cordisx/plugin-pet",
+    "id": "plugin-composer-animal"
+  }
+]

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { evaluateTrustRecords, validateMarketplacePluginDocument } from '../scripts/catalog.mjs'
+import { evaluateRequiredTrust, evaluateTrustRecords, validateMarketplacePluginDocument } from '../scripts/catalog.mjs'
 
 const GENERATED_AT = '2026-08-24T12:31:00Z'
 const plugin = {
@@ -99,4 +99,21 @@ test('accepts feed revocation without changing independent Official identity', (
   assert.deepEqual(evaluateTrustRecords([plugin], [official], [revoked], GENERATED_AT), [])
   assert.equal(official.status, 'active')
   assert.equal(revoked.status, 'revoked')
+})
+
+test('required owner decisions follow each exact published artifact without preventing withdrawal', () => {
+  const required = [{ source: plugin.source, id: plugin.id }]
+  assert.deepEqual(evaluateRequiredTrust([plugin], [official], [certification], required), [])
+  assert.match(evaluateRequiredTrust([plugin], [official], [], required).join('\n'), /missing exact Certified/)
+  const updated = structuredClone(plugin)
+  updated.version = '1.4.0'
+  assert.match(
+    evaluateRequiredTrust([updated], [official], [certification], required).join('\n'),
+    /missing exact Certified/,
+  )
+  const revoked = { ...certification, status: 'revoked' }
+  assert.deepEqual(evaluateRequiredTrust([plugin], [official], [revoked], required), [])
+  const sourceOnly = { ...plugin }
+  delete sourceOnly.artifact
+  assert.deepEqual(evaluateRequiredTrust([sourceOnly], [], [], required), [])
 })
