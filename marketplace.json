@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v8.schema.json",
   "schemaVersion": 8,
-  "generatedAt": "2026-11-19T19:35:36Z",
+  "generatedAt": "2026-11-19T19:36:31Z",
   "trust": {
     "authority": "cordisx.marketplace.codeowners/v1",
     "root": "https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json",
@@ -128,15 +128,15 @@
           ]
         }
       },
-      "version": "0.1.5",
+      "version": "0.1.6",
       "source": "https://github.com/cordisx/plugin-channel",
       "artifact": {
         "packageName": "@cordisx/channel",
-        "downloadUrl": "https://github.com/cordisx/plugin-channel/releases/download/v0.1.5/cordisx-channel-0.1.5.tgz",
-        "integrity": "sha256:cc0a1fecd2b1b0f7a14ba68f121ce3d7ff85bc2cfe912d3d1c342640ae6d21b9",
+        "downloadUrl": "https://github.com/cordisx/plugin-channel/releases/download/v0.1.6/cordisx-channel-0.1.6.tgz",
+        "integrity": "sha256:22bc242fa4fa1166496106043596085f7fd5fe12db36654ca21cf5f35f680603",
         "publisherIdentity": "npm:@cordisx"
       },
-      "icon": "https://raw.githubusercontent.com/cordisx/plugin-channel/9e911c63ee8dc43518435490f39cbf7333c9d688/assets/channel.png",
+      "icon": "https://raw.githubusercontent.com/cordisx/plugin-channel/b4bdd6429172cebaa9087aa574d52548f545f5d0/assets/channel.png",
       "homepage": "https://github.com/cordisx/plugin-channel#readme",
       "license": "AGPL-3.0-or-later",
       "compatibility": {
@@ -644,19 +644,19 @@
       "level": "cordisx-certified",
       "identity": {
         "pluginId": "channel",
-        "version": "0.1.5",
+        "version": "0.1.6",
         "canonicalSource": "https://github.com/cordisx/plugin-channel",
-        "integrity": "sha256:cc0a1fecd2b1b0f7a14ba68f121ce3d7ff85bc2cfe912d3d1c342640ae6d21b9"
+        "integrity": "sha256:22bc242fa4fa1166496106043596085f7fd5fe12db36654ca21cf5f35f680603"
       },
       "reviewPolicy": {
         "id": "cordisx-marketplace-review",
         "version": "1.0.0"
       },
-      "reviewedAt": "2026-11-18T04:29:59Z",
-      "expiresAt": "2027-11-18T04:29:59Z",
+      "reviewedAt": "2026-11-19T19:36:31Z",
+      "expiresAt": "2027-11-19T19:36:31Z",
       "reviewer": {
         "authority": "cordisx.marketplace.codeowners/v1",
-        "evidenceRef": "https://github.com/cordisx/marketplace/pull/21"
+        "evidenceRef": "https://github.com/cordisx/marketplace/pull/25"
       },
       "status": "active",
       "label": {
@@ -665,7 +665,7 @@
       },
       "description": {
         "key": "marketplace.channel.certified.description",
-        "fallback": "Channel 0.1.5 artifact reviewed under policy 1.0.0."
+        "fallback": "Channel 0.1.6 artifact reviewed under policy 1.0.0."
       }
     },
     {
