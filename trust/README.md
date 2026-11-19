@@ -26,3 +26,14 @@ own catalog may omit explicit confirmation for named DOM/rendering abilities,
 while still issuing a scoped, profile-, generation-, fingerprint-bound audited
 grant or lease. Every other permission, install review, sandbox, and lifecycle
 gate remains unchanged.
+
+## Owner-maintained release coverage
+
+`required-decisions.json` lists catalog identities whose author and Marketplace
+owner require explicit Official and Certified decisions when an installable
+artifact exists. For each new version or digest, provide a new exact record
+with the owner's approval evidence; the previous certification does not carry
+over. Validation accepts an explicit revoked or expired record so withdrawal
+remains possible. Entries without a published artifact are discovery-only and
+cannot receive these artifact-bound records until one exists. Other catalog
+entries retain the independent trust states described above.
