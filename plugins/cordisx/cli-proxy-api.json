@@ -20,19 +20,19 @@
       ]
     }
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "source": "https://github.com/cordisx/plugin-cli-proxy-api",
   "artifact": {
     "publisherIdentity": "npm:@cordisx",
     "packageName": "@cordisx/plugin-cli-proxy-api",
-    "downloadUrl": "https://github.com/cordisx/plugin-cli-proxy-api/releases/download/v0.1.1/cordisx-plugin-cli-proxy-api-0.1.1.tgz",
-    "integrity": "sha256:171d1e650602b026a2ea662b9e241c5ba5babcb7f3dbbc25d3960e8b6c750b94"
+    "downloadUrl": "https://github.com/cordisx/plugin-cli-proxy-api/releases/download/v0.1.2/cordisx-plugin-cli-proxy-api-0.1.2.tgz",
+    "integrity": "sha256:311ff7a56988d217f29812897c02c75a6d622b1c083d3f9b61da8d3d64b9c9e1"
   },
   "icon": "https://raw.githubusercontent.com/cordisx/plugin-cli-proxy-api/12d5daa36dbd5dd565b96d22859afb1d0f3f3e1d/assets/icon.png",
   "homepage": "https://github.com/cordisx/plugin-cli-proxy-api#readme",
   "license": "AGPL-3.0-or-later",
   "compatibility": {
-    "cordisx": "=0.1.0-beta.2"
+    "cordisx": ">=0.1.0-beta.76 <=0.1.0-beta.78"
   },
   "authors": [
     {

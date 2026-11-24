@@ -124,7 +124,8 @@ test('unscoped v8 artifacts can match independent certification only for the exa
     expiresAt: '2026-11-20T08:00:00Z',
     status: 'active',
   }
-  assert.deepEqual(evaluateTrustRecords([plugin], [], [record], config.generatedAt), [])
+  const evaluatedAt = '2026-10-01T00:00:00Z'
+  assert.deepEqual(evaluateTrustRecords([plugin], [], [record], evaluatedAt), [])
   for (
     const changed of [
       { ...plugin, id: 'other-notes' },
@@ -134,7 +135,7 @@ test('unscoped v8 artifacts can match independent certification only for the exa
     ]
   ) {
     assert.match(
-      evaluateTrustRecords([changed], [], [record], config.generatedAt).join('\n'),
+      evaluateTrustRecords([changed], [], [record], evaluatedAt).join('\n'),
       /certification does not exactly match/,
     )
   }
