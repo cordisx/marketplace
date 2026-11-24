@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/cordisx/cordisx-protocol/main/schemas/marketplace-feed.v8.schema.json",
   "schemaVersion": 8,
-  "generatedAt": "2026-11-24T19:02:34Z",
+  "generatedAt": "2026-11-24T19:22:50Z",
   "trust": {
     "authority": "cordisx.marketplace.codeowners/v1",
     "root": "https://raw.githubusercontent.com/cordisx/marketplace/main/marketplace.json",
@@ -210,11 +210,11 @@
       "id": "cli-proxy-api",
       "fallbackLocale": "en",
       "name": "CLI Proxy API",
-      "description": "CLIProxyAPI provider sessions, models, turns, and approvals for CordisX. Install the versioned package through the CordisX plugin manager or CLI.",
+      "description": "CLIProxyAPI provider sessions, models, turns, and approvals for CordisX. The 0.1.2 archive includes a native gateway bridge for macOS arm64 only.",
       "localizations": {
         "zh-CN": {
           "name": "CLI Proxy API",
-          "description": "为 CordisX 提供 CLIProxyAPI 的会话、模型、回合和审批能力。通过 CordisX 插件管理器或 CLI 安装指定版本。",
+          "description": "为 CordisX 提供 CLIProxyAPI 会话、模型、回合及审批能力。0.1.2 下载包仅包含 macOS arm64 原生网关桥接。",
           "authors": [
             "CordisX 团队"
           ],
